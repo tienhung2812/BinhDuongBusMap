@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+<script ng-repeat="x in myData">
+  <!-- {{ x.lat + ', ' + x.lon }} -->
+	
+	var myLatLng = {lat: {{ x.lat }}, lng: {{ x.lon }} };
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+	zoom: 4,
+	center: myLatLng
+	});
+
+	var marker = new google.maps.Marker({
+	position: myLatLng,
+	map: map,
+	title: 'Hello World!'
+	});
+  
+</script>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("bus_39.json").then(function(response) {
+        $scope.myData = response.data.records;
+    });
+});
+</script>
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&callback=initMap"
+async defer></script>
+</body>
+</html> 
