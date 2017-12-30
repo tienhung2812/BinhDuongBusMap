@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Binh Duong Kaze busmap</title>
+  <meta name="description" content="Bus map - Binh Duong" />
+  <meta name="keywords" content="Binh Duong, Bus, Bus Map, Google">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
+
+</head>
+
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-9 col-md-6 col-lg-8">
+            <img src="assets/img/logo.png" alt="logo">
+          </div>
+          <div class="col-sm-3 col-md-6 col-lg-4">
+            <div class="clearfix">
+              <span class="float-right">
+                <div class="dropdown">  
+                  <img src="assets/img/menu-icon.png"  type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color: #d8f2f8; border-style: none;">
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Sign In</a>
+                    <a class="dropdown-item" href="#">About</a>
+                    <a class="dropdown-item" href="#">FAQ</a>
+                  </div>
+                </div> 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bus route -->
+
+    <!-- Map -->
+    <div id="map"></div>
+    <div ng-app="myApp" ng-controller="customersCtrl">	
+    </div>		
+     <!-- <div ng-repeat="x in myData">	  -->
+      can display {{ x.lat }}, {{ x.lon }} } here, but not in javascript
+      <!-- </div> -->
+     <script> 		
+        var map;
+      var marker;
+      //var myLatLng = {lat: {{ x.lat }}, lng: {{ x.lon }} 
+      var myLatLng = {lat: 11.058186, lng: 106.6837316};
+        function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 11.058186, lng: 106.6837316},
+        zoom: 8
+      });		
+      marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+      });
+        }   
+      </script>
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', [function($scope, $http) {
+      $http.get("bus_39.json").then(function(response) {
+        $scope.myData = response.data.records;						
+      });
+    }]);
+    </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&callback=initMap"
+      async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </body>
