@@ -1,12 +1,13 @@
 var map;
 function initMap() {
+	console.log('xxx');
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 10.7289658, lng: 106.7057848},
     zoom: 15,
     disableDefaultUI: true
   });
   var geocoder = new google.maps.Geocoder();
-
+	
   google.maps.event.addListener(map, 'click', function(event) {
     geocoder.geocode({
       'latLng': event.latLng
