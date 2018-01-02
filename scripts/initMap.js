@@ -1,4 +1,3 @@
-var map;
 var infoWindow;
 var path;
 
@@ -26,6 +25,22 @@ function initMap() {
 	// Finally, right click to save to a file
 	// map.addListener('click', addLatLng);		
 	// poly.addListener('click', removeLatLng);
+	var geocoder = new google.maps.Geocoder();
+	google.maps.event.addListener(map, 'click', function(event) {
+    geocoder.geocode({
+      'latLng': event.latLng
+    }, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].location
+              });
+            document.getElementById("starting-point").setAttribute('value',results[0].formatted_address );
+        }
+      }
+    });
+  });
 }
 
  // Handles click events on a map, and adds a new point to the Polyline.
