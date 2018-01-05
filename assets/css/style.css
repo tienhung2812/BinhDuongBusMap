@@ -301,3 +301,42 @@ body,html {
 .direction #direction-bg{
     opacity: 0.3;
 }
+/* by phat */
+.contextmenu{
+  visibility:hidden;
+  background:#ffffff;
+  border:1px solid #8888FF;
+  z-index: 10;
+  position: relative;
+  width: 240px;
+  
+  font-size: 14px;
+  height: 100px;
+  width: 200px;
+}
+.contextmenu div{
+padding-left: 2px;
+}
+.contextmenu #menu1 {
+	padding-left : 10px;
+	padding-right : 10px;
+	padding-bottom: 2px;
+	padding-top : 2px;
+}
+
+.contextmenu #menu2 {
+	padding-left : 10px;
+	padding-right : 10px;
+	padding-bottom: 2px;
+	padding-top : 2px;
+}
+
+.contextmenu #menu1:hover {
+    background:#dbebd0;	
+	
+}
+
+.contextmenu #menu2:hover {
+    background:#dbebd0;
+}
+

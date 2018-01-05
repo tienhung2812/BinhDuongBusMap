@@ -153,7 +153,6 @@
     </div>
     <button class="horizontal-collapse-btn btn btn-primary-outline" id="horizontal-collapse-btn-id" onclick="direction_collapse()" ></button>
     <script src="assets/js/app.js"></script>
-=======
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -168,51 +167,22 @@
       }
     </style>
   </head>
-  <body>
+  <body>	
     <div id="map"></div>	
-	<!-- <script src = 'assets\js\map-app.js'> </script>  -->
 	<script> 
 		var poly;
 		var redLinepath;
 		var map;
 	</script>
 	<script src='scripts/initMap.js'></script>
+	<script src='scripts/initMarkers.js'></script>
 	<script src='scripts/createMarkers.js'></script>
 	<script>		
 		function displayInfo(arg) {
 				createMarkers(arg);	 
-		}
-	  <!-- change argument later -->
-	  // change the argument later!
-	  
+		}		
 	  </script>
-    <!-- <script> -->
-      <!-- var map; -->
-      <!-- function initMap() { -->
-        <!-- map = new google.maps.Map(document.getElementById('map'), { -->
-          <!-- zoom: 16, -->
-          <!-- center: new google.maps.LatLng(11.058186, 106.6837316), -->
-          <!-- mapTypeId: 'terrain' -->
-        <!-- }); -->
-        <!-- var script = document.createElement('script'); -->
-		<!-- script.src = 'bus_info.js';	 -->
-        <!-- document.getElementsByTagName('head')[0].appendChild(script); -->
-      <!-- } -->
-
-      <!-- // Loop through the results array and place a marker for each -->
-      <!-- // set of coordinates. -->
-      <!-- window.eqfeed_callback = function(results) { -->
-        <!-- for (var i = 0; i < results.features.length; i++) {			 -->
-          <!-- var coords = results.features[i].geometry.coordinates;		   -->
-		  <!-- var latLng = new google.maps.LatLng(coords[0],coords[1]); -->
-          <!-- var marker = new google.maps.Marker({ -->
-            <!-- position: latLng, -->
-            <!-- map: map -->
-          <!-- }); -->
-        <!-- } -->
-      <!-- } -->
-    <!-- </script> -->
-	
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&libraries=geometry&callback=initMap"
 		async defer></script>
 

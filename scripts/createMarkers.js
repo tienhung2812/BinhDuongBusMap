@@ -1,6 +1,22 @@
 var markersArray = [];
+var bus39_markers = [];
+var bus68_markers = [];	
+var bus55_markers = [];
+var bus51_markers = [];
+var bus52_markers = [];
+var bus53_markers = [];
+var bus66_markers = [];
+var bus67_markers = [];
+var bus68_markers = [];
+var redLinePath;
+var brownLinePath;
+var yellowLinePath;
+var blueLinePath;
+var pinkLinePath;
+var greenLinePath;
+
 function createMarkers(arg) {
-	var redLinePath = [
+	redLinePath = [
 		{lat:11.092152, lng: 106.68048139999996},
 		{lat: 11.0893927, lng: 106.68114079999998},
 		{lat: 11.0855253, lng: 106.68204119999996},
@@ -36,7 +52,7 @@ function createMarkers(arg) {
 		{lat: 10.972454499300357, lng: 106.6717529296875},
 		{lat: 10.975993465340238, lng: 106.66943550109863}
 	];
-	var brownLinePath = [
+	brownLinePath = [
 		new google.maps.LatLng(11.054856092382304, 106.66571795940399),
 		new google.maps.LatLng(11.055137763121243, 106.66674792766571),
 		new google.maps.LatLng(11.055095644149437, 106.66683912277222),
@@ -128,7 +144,7 @@ function createMarkers(arg) {
 		new google.maps.LatLng(10.9758088, 106.67049629999997)
 	];
 	
-	var blueLinePath = [
+	blueLinePath = [
 		new google.maps.LatLng(11.054850827506097, 106.6656468808651),
 		new google.maps.LatLng(11.055129865814488, 106.66671574115753),
 		new google.maps.LatLng(11.05512328472537, 106.66682437062263),
@@ -246,7 +262,7 @@ function createMarkers(arg) {
 		new google.maps.LatLng(10.9758088, 106.67049629999997)
 	];
 	
-	var yellowLinePath = [	
+	yellowLinePath = [	
 		new google.maps.LatLng(11.05307129393542, 106.66808366775513),
 		new google.maps.LatLng(11.052473726246808, 106.66814804077148),
 		new google.maps.LatLng(11.051762961331605, 106.66823655366898),
@@ -334,7 +350,7 @@ function createMarkers(arg) {
 		new google.maps.LatLng(11.054849511287028, 106.66564352810383)
 	];
 	
-	var greenLinePath = [
+	greenLinePath = [
 		new google.maps.LatLng(11.0755935, 106.69248479999999),
 		new google.maps.LatLng(11.074867203461464, 106.68984174728394),
 		new google.maps.LatLng(11.073645833067697, 106.68493866920471),
@@ -390,7 +406,7 @@ function createMarkers(arg) {
 		new google.maps.LatLng(11.07518077106211, 106.69099375605583)
 	];
 	
-	var pinkLinePath = [
+	pinkLinePath = [
 		new google.maps.LatLng(11.058186, 106.68373159999999),
 		new google.maps.LatLng(11.058115032611537, 106.68321132659912),
 		new google.maps.LatLng(11.059994566483022, 106.68258905410767),
@@ -430,54 +446,96 @@ function createMarkers(arg) {
 	];
 	
 	//call a script that create bus route paths	
-		var script = document.createElement('script');
-		
-		
+		var script = document.createElement('script');			
 	// for example, arg1 == 'bus_39', show icon of bus_39
 	// Loop through the results array and place a marker for each
-	// set of coordinates	
-	if (arg == '39')  {
-		map.setCenter({lat:11.092152, lng: 106.68048139999996});
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(redLinePath);
-		poly.setOptions({strokeColor:'#ff0000'});
-		script.src = 'scripts/get_bus39_info.js';	
-	}
-	else if (arg == '55') {
-		map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(brownLinePath);		
-		poly.setOptions({strokeColor:'#663300'});
-		script.src = 'scripts/get_bus55_info.js';	
-	}
-	else if (arg == '51' || arg == '52' || arg == '53') {
-		map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(blueLinePath);
-		poly.setOptions({strokeColor:'#0000ff'});
-		script.src = 'scripts/get_bus51_info.js';	
-	}
-	else if (arg == '66') {
-		map.setCenter(new google.maps.LatLng(11.05307129393542, 106.66808366775513));
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(yellowLinePath);
-		poly.setOptions({strokeColor:'#ffff00'});
-		script.src = 'scripts/get_bus66_info.js';	
-	}
-	else if (arg == '67') {
-		map.setCenter(new google.maps.LatLng(11.0755935, 106.69248479999999));
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(greenLinePath);
-		poly.setOptions({strokeColor:'#008000'});
-		script.src = 'scripts/get_bus67_info.js';	
-	}
-	else if (arg == '68') {
-		map.setCenter(new google.maps.LatLng(11.058186, 106.68373159999999));
-		while(markersArray.length) { markersArray.pop().setMap(null); }
-		poly.setPath(pinkLinePath);
-		poly.setOptions({strokeColor:'#ffc0cb'});
-		script.src = 'scripts/get_bus68_info.js';	
-	}
+	// set of coordinates
+	// Begin Initializing the Markers, but not display them yet
+	// script.src = 'scripts/get_bus39_info.js';
+	// initMarkers('39',script);
+	// script.src = 'scripts/get_bus55_info.js';
+	// initMarkers('55',script);	
+	// script.src = 'scripts/get_bus51_info.js';
+	// initMarkers('51',script);
+	// script.src = 'scripts/get_bus66_info.js';
+	// initMarkers('66',script);
+	// script.src = 'scripts/get_bus67_info.js';
+	// initMarkers('67',script);
+	// script.src = 'scripts/get_bus68_info.js';
+	// initMarkers('68',script);	
+	console.log('bus length: '+bus_markers.length);
+	// End Initializing the Markers
+	removeMarkers();
+	switch (arg) {
+		case '39':
+			script.src = 'scripts/get_bus39_info.js';
+			initMarkers('39',script);
+			//remove other markers					
+			map.setCenter({lat:11.092152, lng: 106.68048139999996});
+			poly.setPath(redLinePath);
+			poly.setOptions({strokeColor:'#ff0000'});
+			console.log('39 :' + bus39_markers.length);
+			// for (i=0; i<bus39_markers.length; i++) {
+				// bus39_markers[i].setMap(map);
+			// };
+			// console.log('39 called: '+bus39_markers.length);			
+			break;
+		case '55':			
+			script.src = 'scripts/get_bus55_info.js';
+			initMarkers('55',script);	
+			map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
+			poly.setPath(brownLinePath);		
+			poly.setOptions({strokeColor:'#663300'});
+			// for (i=0; i<bus55_markers.length; i++) {
+				// bus55_markers[i].setMap(map);
+				// // console.log(bus55_markers[i].getPosition().toString());
+			// };
+			console.log('55 called: '+bus55_markers.length);			
+			break;
+		case '51':
+			script.src = 'scripts/get_bus55_info.js';
+			initMarkers('55',script);
+		case '52':
+			script.src = 'scripts/get_bus52_info.js';
+			initMarkers('52',script);
+		case '53':
+			script.src = 'scripts/get_bus53_info.js';
+			initMarkers('53',script);			
+			map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
+			poly.setPath(blueLinePath);
+			poly.setOptions({strokeColor:'#0000ff'});
+			console.log('53 :' + bus53_markers.length);
+			break;
+		case '66':
+			map.setCenter(new google.maps.LatLng(11.05307129393542, 106.66808366775513));
+			poly.setPath(yellowLinePath);
+			poly.setOptions({strokeColor:'#ffff00'});
+			script.src = 'scripts/get_bus66_info.js';
+			initMarkers('66',script);
+			break;
+		case '67':
+			map.setCenter(new google.maps.LatLng(11.0755935, 106.69248479999999));
+			// while(markersArray.length) { markersArray.pop().setMap(null); }
+			poly.setPath(greenLinePath);
+			poly.setOptions({strokeColor:'#008000'});
+			script.src = 'scripts/get_bus67_info.js';
+			initMarkers('67',script);
+			break;
+		case '68':
+			map.setCenter(new google.maps.LatLng(11.058186, 106.68373159999999));
+			poly.setPath(pinkLinePath);
+			poly.setOptions({strokeColor:'#ffc0cb'});
+			script.src = 'scripts/get_bus68_info.js';
+			initMarkers('68',script);
+			break;
+	}		
+	
+	// If rightclick on the map, a popup wil be shown and user can save a recent drawn bus route path
+	// google.maps.event.addListener(map, "rightclick", function(event) {
+		// download('bus_data.txt', path.getArray());			
+	// });	
+};
+function initMarkers(busNumber,script) {	
 	document.getElementsByTagName('head')[0].appendChild(script);
 	var marker_map;		
 	window.eqfeed_callback = function(results) {		
@@ -489,14 +547,41 @@ function createMarkers(arg) {
 		var marker = new google.maps.Marker({
 			scaledSize: new google.maps.Size(32, 32), // scaled size
 			position: latLng,
-			map: map,
+			// map: map,
 			icon : image,
 			clickable: true
 		});
-		markersArray.push(marker);
+		switch (busNumber) {
+			case '39':
+				bus39_markers.push(marker);		
+				break;
+			case '55':
+				bus55_markers.push(marker);
+				break;
+			case '51':
+				bus51_markers.push(marker);
+				break;
+			case '52':
+				bus52_markers.push(marker);
+				break;
+			case '53':
+				bus53_markers.push(marker);
+				break;
+			case '66':
+				bus66_markers.push(marker);
+				break;
+			case '67':
+				bus67_markers.push(marker);
+				break;
+			case '68':
+				bus68_markers.push(marker);
+				break;
+		};
+		// end switch statement
+		
 		marker.info = new google.maps.InfoWindow({
-		  content: results.features[i].properties.name
-		  
+		  content: "Trạm dừng: " + results.features[i].properties.name + 
+					"<br>Các tuyến: "+ results.features[i].properties.bus_routes		 
 		});
 		
 		google.maps.event.addListener(marker, 'click', function(event) {				
@@ -508,12 +593,12 @@ function createMarkers(arg) {
 			// path.push(event.latLng);				
 		});
 	}
-		// If rightclick on the map, a popup wil be shown and user can save a recent drawn bus route path
-		// google.maps.event.addListener(map, "rightclick", function(event) {
-			// download('bus_data.txt', path.getArray());			
-		// });
+	//end for loop 
+	
 	}
+	// end eqfeed_callback function
 }
+
 
 // function download(filename, text) {
     // var pom = document.createElement('a');
@@ -529,3 +614,31 @@ function createMarkers(arg) {
         // pom.click();
     // }
 // }
+
+function removeMarkers() {	
+	for (i=0; i<bus39_markers.length; i++) {
+		bus39_markers[i].setMap(null);
+	}
+	for (i=0; i<bus55_markers.length; i++) {
+		bus55_markers[i].setMap(null);
+	}
+	for (i=0; i<bus51_markers.length; i++) {
+		bus51_markers[i].setMap(null);
+	}
+	for (i=0; i<bus52_markers.length; i++) {
+		bus55_markers[i].setMap(null);
+	}
+	for (i=0; i<bus53_markers.length; i++) {
+		bus53_markers[i].setMap(null);
+	}
+	for (i=0; i<bus66_markers.length; i++) {
+		bus66_markers[i].setMap(null);
+	}
+	for (i=0; i<bus67_markers.length; i++) {
+		bus67_markers[i].setMap(null);
+	}
+	for (i=0; i<bus68_markers.length; i++) {
+		bus68_markers[i].setMap(null);
+	}
+};
+
