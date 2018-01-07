@@ -26,3 +26,12 @@ function direction_collapse() {
       $('#horizontal-collapse-btn-id').addClass('horizontal-collapse-btn-closed');
   }
 }
+
+$("#button").on("click", function(){
+    $('.routes').addClass('routes-hide');
+    $("#result").load("assets/content/"+this.href.substring(this.href.indexOf("#")+1) +".html");
+    $("#result").removeClass('result-hide');
+    $("#result").addClass('result-show');
+  });
+
+

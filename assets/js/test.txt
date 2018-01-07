@@ -1,0 +1,89 @@
+<div class="panel-group" id="accordion">
+						<div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#51-toanhabecamex">
+							<div class="panel-heading">
+								<h4 class="panel-title row">
+									<a>Tòa nhà Becamex</a>
+								</h4>
+							</div>
+							<div id="51-toanhabecamex" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="timeline">
+										<!-- a row -->
+										<div class="containeer right">
+											<div class="content">
+												<p>
+													<strong>6:00</strong>
+												</p>
+											</div>
+										</div>
+										<!-- a row -->
+										<div class="containeer right">
+											<div class="content">
+												<p>
+													<strong>6:20</strong>
+												</p>
+											</div>
+										</div>
+										<div class="containeer right">
+											<div class="content">
+												<p>
+													<strong>6:30</strong>
+												</p>
+											</div>
+										</div>
+										<div class="containeer right">
+											<div class="content">
+												<p>
+													<strong>6:33</strong>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#51-sanvandongdodau">
+						<div class="panel-heading">
+							<h4 class="panel-title row">
+								<a>
+                    Sân vận động Gò Đậu</a>
+							</h4>
+						</div>
+						<div id="51-sanvandongdodau" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="timeline">
+									<!-- a row -->
+									<div class="containeer right">
+										<div class="content">
+											<p>
+												<strong>6:02</strong>
+											</p>
+										</div>
+									</div>
+									<!-- a row -->
+									<div class="containeer right">
+										<div class="content">
+											<p>
+												<strong>6:22</strong>
+											</p>
+										</div>
+									</div>
+									<div class="containeer right">
+										<div class="content">
+											<p>
+												<strong>6:35</strong>
+											</p>
+										</div>
+									</div>
+									<div class="containeer right">
+										<div class="content">
+											<p>
+												<strong>6:42</strong>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
