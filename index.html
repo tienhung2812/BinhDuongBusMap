@@ -79,12 +79,20 @@
           <div class="routes" id="container">
             <div class="container" >
               <div class="row" >
+<<<<<<< HEAD
                 <a href="#51" id="button" onclick="displayInfo('51')">
+=======
+                <a href="#" id="button" class="bus51" onclick="displayInfo('51')">
+>>>>>>> ada4ca2ac185a039288b7b8fa609df22f6680ccd
                     <img src="assets/img/blue.png">
                     <h1>51</h1>
                     <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>     
                 </a>
+<<<<<<< HEAD
                 <a href="#51" id="button" onclick="displayInfo('52')">
+=======
+                <a href="#" id="button"  onclick="displayInfo('52')">
+>>>>>>> ada4ca2ac185a039288b7b8fa609df22f6680ccd
                   <img src="assets/img/blue.png">
                   <h1>52</h1>
                   <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>
@@ -176,14 +184,30 @@
 		var poly;
 		var redLinepath;
 		var map;
+		
 	</script>
 	<script src='scripts/initMap.js'></script>
 	<script src='scripts/initMarkers.js'></script>
 	<script src='scripts/createMarkers.js'></script>
 	<script>		
 		function displayInfo(arg) {
-				createMarkers(arg);	 
-		}		
+				createMarkers(arg);	 				
+		}
+		<!-- just define a variable containing the bus stop. In the example, I use 'Becamex' string representing that idea. -->
+		<!-- remember to change ID in the html to CLASS like, ID is somewhat unique! -->
+		
+		$('#button').click(function() {
+			var bus_tag = $('.bus51').text();
+			if (bus_tag.includes('Becamex'))
+				for (i=0; i<bus_markers.length; i++) {
+					<!-- console.log(bus_markers[i].getPosition()); -->
+					if (bus_markers[i].info.getContent().includes('Becamex')) {
+						map.setCenter(bus_markers[i].getPosition());
+						map.setZoom(16);
+					}
+				}
+				
+	}	);
 	  </script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&libraries=geometry&callback=initMap"
