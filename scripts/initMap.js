@@ -41,7 +41,8 @@ function initMap() {
 		calculateAndDisplayRoute(directionsService, directionsDisplay);
 	}
 
-	initAllMarkers();		
+	initAllMarkers();
+	console.log('init finished!');
 }
 
  // Handles click events on a map, and adds a new point to the Polyline.

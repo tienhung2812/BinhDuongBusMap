@@ -463,26 +463,26 @@ function createMarkers(arg) {
 	// initMarkers('67',script);
 	// script.src = 'scripts/get_bus68_info.js';
 	// initMarkers('68',script);	
-	console.log('bus length: '+bus_markers.length);
+	// console.log('bus length: '+bus_markers.length);
 	// End Initializing the Markers
-	removeMarkers();
+	removeMarkers();	
 	switch (arg) {
 		case '39':
-			script.src = 'scripts/get_bus39_info.js';
-			initMarkers('39',script);
+			// script.src = 'scripts/get_bus39_info.js';
+			// initMarkers('39',script);
 			//remove other markers					
 			map.setCenter({lat:11.092152, lng: 106.68048139999996});
 			poly.setPath(redLinePath);
 			poly.setOptions({strokeColor:'#ff0000'});
-			console.log('39 :' + bus39_markers.length);
+			// console.log('39 :' + bus39_markers.length);
 			// for (i=0; i<bus39_markers.length; i++) {
 				// bus39_markers[i].setMap(map);
 			// };
 			// console.log('39 called: '+bus39_markers.length);			
 			break;
 		case '55':			
-			script.src = 'scripts/get_bus55_info.js';
-			initMarkers('55',script);	
+			// script.src = 'scripts/get_bus55_info.js';
+			// initMarkers('55',script);	
 			map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
 			poly.setPath(brownLinePath);		
 			poly.setOptions({strokeColor:'#663300'});
@@ -490,43 +490,43 @@ function createMarkers(arg) {
 				// bus55_markers[i].setMap(map);
 				// // console.log(bus55_markers[i].getPosition().toString());
 			// };
-			console.log('55 called: '+bus55_markers.length);			
+			// console.log('55 called: '+bus55_markers.length);			
 			break;
 		case '51':
-			script.src = 'scripts/get_bus55_info.js';
-			initMarkers('55',script);
+			// script.src = 'scripts/get_bus55_info.js';
+			// initMarkers('55',script);
 		case '52':
-			script.src = 'scripts/get_bus52_info.js';
-			initMarkers('52',script);
+			// script.src = 'scripts/get_bus52_info.js';
+			// initMarkers('52',script);
 		case '53':
-			script.src = 'scripts/get_bus53_info.js';
-			initMarkers('53',script);			
+			// script.src = 'scripts/get_bus53_info.js';
+			// initMarkers('53',script);			
 			map.setCenter(new google.maps.LatLng(11.054856092382304, 106.66571795940399));
 			poly.setPath(blueLinePath);
 			poly.setOptions({strokeColor:'#0000ff'});
-			console.log('53 :' + bus53_markers.length);
+			// console.log('53 :' + bus53_markers.length);
 			break;
 		case '66':
 			map.setCenter(new google.maps.LatLng(11.05307129393542, 106.66808366775513));
 			poly.setPath(yellowLinePath);
 			poly.setOptions({strokeColor:'#ffff00'});
-			script.src = 'scripts/get_bus66_info.js';
-			initMarkers('66',script);
+			// script.src = 'scripts/get_bus66_info.js';
+			// initMarkers('66',script);
 			break;
 		case '67':
 			map.setCenter(new google.maps.LatLng(11.0755935, 106.69248479999999));
 			// while(markersArray.length) { markersArray.pop().setMap(null); }
 			poly.setPath(greenLinePath);
 			poly.setOptions({strokeColor:'#008000'});
-			script.src = 'scripts/get_bus67_info.js';
-			initMarkers('67',script);
+			// script.src = 'scripts/get_bus67_info.js';
+			// initMarkers('67',script);
 			break;
 		case '68':
 			map.setCenter(new google.maps.LatLng(11.058186, 106.68373159999999));
 			poly.setPath(pinkLinePath);
 			poly.setOptions({strokeColor:'#ffc0cb'});
-			script.src = 'scripts/get_bus68_info.js';
-			initMarkers('68',script);
+			// script.src = 'scripts/get_bus68_info.js';
+			// initMarkers('68',script);
 			break;
 	}		
 	
@@ -593,10 +593,9 @@ function initMarkers(busNumber,script) {
 			// path.push(event.latLng);				
 		});
 	}
-	//end for loop 
-	
+	//end for loop 	
 	}
-	// end eqfeed_callback function
+	// end eqfeed_callback function				
 }
 
 
