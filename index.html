@@ -193,14 +193,14 @@
 		function displayInfo(arg) {
 				createMarkers(arg);	 				
 		}
-		<!-- just define a variable containing the bus stop. In the example, I use 'Becamex' string representing that idea. -->
-		<!-- remember to change ID in the html to CLASS like, ID is somewhat unique! -->
+		// <!-- just define a variable containing the bus stop. In the example, I use 'Becamex' string representing that idea. -->
+		// <!-- remember to change ID in the html to CLASS like, ID is somewhat unique! -->
 		
 		$('#button').click(function() {
 			var bus_tag = $('.bus51').text();
 			if (bus_tag.includes('Becamex'))
 				for (i=0; i<bus_markers.length; i++) {
-					<!-- console.log(bus_markers[i].getPosition()); -->
+					// <!-- console.log(bus_markers[i].getPosition()); -->
 					if (bus_markers[i].info.getContent().includes('Becamex')) {
 						map.setCenter(bus_markers[i].getPosition());
 						map.setZoom(16);
