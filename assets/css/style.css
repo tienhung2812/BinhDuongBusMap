@@ -1,6 +1,7 @@
 body,html {
     margin: 0px 0px 0px 0px;
     overflow:hidden;
+    
 }
 
 /* Header */
@@ -197,15 +198,15 @@ body,html {
 }
 
 .result-show{
-    transition: all 0.3 ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
+    transition: all 0.4 ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
 }
 
 .result-hide{
-    transition: all 0.3 ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
+    transition: all 0.4 ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
     position: absolute;
     opacity: 0;
     visibility: hidden;
@@ -359,32 +360,74 @@ body,html {
 .tab-pane{
     padding: 0 20px;
 
-
+    height: 400px;
 }
 
 .tab-pane .row{
     border-bottom: 1px solid white;
     padding-bottom: 5px;
+    line-height: 30px;
+    position: relative;
 }
 
 .tab-pane .row a{
     text-decoration: none;
-    padding-left: 15px;
+    
+    margin-left: 20px;
     color: black;
-    font-size:20px;
+    font-size:16px;
     font-weight: normal;
-
+    font-family: 'Roboto', sans-serif;
 }
 
-.tab-pane .row:hover,.tab-pane .row:focus{
+.tab-pane .row::after{
+    background-color: transparent;
+    border: 4px solid #929697;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    left: -15px;
+    content: '';
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.tab-pane .row:hover{
     opacity: 1;
     background-color: #dfdfdf;
     font-weight: bold;
 }
 
+.nav-item .active{
+    font-weight: bold;
+}
+.panel[aria-expanded=true] .row{
+    opacity: 1;
+    background-color: #dfdfdf;
+    font-weight: bold;
+    
+    
+}
+.panel[aria-expanded=true] .row a{
+    font-weight: bold;
+}
+
+.panel[aria-expanded=true] .row::after{
+    border: 4px solid #262626
+}
+
+.panel-heading .row{
+    padding: 0px 5px;
+    border-radius: 0.2rem;
+}
+
+
+
+
 
 /* Timeline */
-/* The actual timeline (the vertical ruler) */
+
 .timeline {
     box-sizing: border-box;
     position: relative;
@@ -399,10 +442,11 @@ body,html {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     top: 0;
     bottom: 0;
     margin-left: -6px;
+    border-radius: 0.2rem;
 }
 
 /* Container around content */
@@ -418,7 +462,6 @@ body,html {
 
 /* The circles on the timeline */
 .containeer::after {
-
     content: '';
     position: absolute;
     width: 25px;
@@ -455,7 +498,7 @@ body,html {
 }
 
 .content p{
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 0px;
 }
 
@@ -499,10 +542,22 @@ body,html {
 }
 
 .tab-content .active{
-    height: 420px;
     overflow-y:auto;
 
 }
+
+#loadingBar_BG{
+    width: 360px;
+    left:0;
+    position: absolute;
+    height: 5px;
+}
+
+#loadingBar {
+    width: 1%;
+    height: 5px;
+    background-color: green;
+} 
 
 /* by phat */
 .contextmenu{

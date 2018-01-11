@@ -27,11 +27,54 @@ function direction_collapse() {
   }
 }
 
-$("#button").on("click", function(){
+$(".route-button").on("click", function(){
+    $("#loadingBar_BG").show();
     $('.routes').addClass('routes-hide');
-    $("#result").load("assets/content/"+this.href.substring(this.href.indexOf("#")+1) +".html");
+  
+    $("#result").load("assets/content/bus-route.html");
+    setBusRouteProgressBar(50);
     $("#result").removeClass('result-hide');
     $("#result").addClass('result-show');
+    setBusRouteProgressBar(100);
+    // resetBusRouteProgressBar();
   });
 
+var progress =1;
+//Bus-route Process bar
+function setBusRouteProgressBar(percent) {
+    var elem = document.getElementById("loadingBar"); 
+    var width = progress;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width+=3; 
+            elem.style.width = width + '%'; 
+            elem.setAttribute('aria-valuenow',width);
+        }
+    }    
+    if(percent==100){
+        setTimeout(function() {
+            $('#loadingBar_BG').fadeOut();          
+        }, 500);
+        resetBusRouteProgressBar();
+    }
+} 
 
+function resetBusRouteProgressBar(){
+    progress=1;
+    var elem = document.getElementById("loadingBar"); 
+    var width = 1;
+    elem.setAttribute('aria-valuenow',width);
+    elem.setAttribute('aria-valuenow',width);
+    elem.style.width = width + '%'; 
+ 
+    
+}
+
+$().ready(function(){
+    $("#loadingBar_BG").hide();
+    resetBusRouteProgressBar();
+}
+)
