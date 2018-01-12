@@ -1,6 +1,165 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Binh Duong Kaze busmap</title>
+      <meta name="description" content="Bus map - Binh Duong" />
+      <meta name="keywords" content="Binh Duong, Bus, Bus Map, Google">
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link href="assets/css/perfect-scrollbar.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">  
+      <script src="assets/js/scrollbar/dist/perfect-scrollbar.js"></script>
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script> 
+      
+      <style>
+          #map {
+            height: 90%;
+          }
+
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <a href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+              
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-4">
+              <div class="clearfix">
+                <span class="float-right">
+                    <div class="dropdown">
+                        <button onclick="dropDown()" class="dropbtn"><img src="assets/img/menu-icon.png"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#">Link awdawdawdawd1</a>
+                          <a href="#">Linawdawdawdk 2</a>
+                          <a href="#">Linawdawdawdk 3</a>
+                        </div>
+                      </div> 
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="assets/js/dropDown.js"></script>
+
+
+    <div id="map">
+      
+    </div>
+    <script src="assets/js/map-app.js">
+    </script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&callback=initMap" -->
+    <!-- async defer></script> -->
+    <button class="vertical-collapse-btn btn btn-primary-outline" id="vertical-collapse-btn-id" onclick="bus_route_collapse()" ></button>
+    <div class="bus-route container" id="bus-route-id">
+        <div class="progress" id="loadingBar_BG">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" id="loadingBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0 %"></div>
+        </div>
+        
+          <h1 id="tuyenxe" class="font-weight-bold">
+              TUYẾN XE
+          </h1>
+          <!-- <button type="button" class="btn" onclick="bus_route_close()">
+            <img src="assets/img/back-icon.png" style="float: right;" width="40" height="40" id="back-icon">&times;
+          </button> -->
+          <div id=result class=""> 
+              
+          </div>
+          <div class="routes" id="container">
+            <div class="container" >
+              <div class="row" >
+                
+                <a href="#51" id="button" class="route-button" onclick="displayInfo('51')">
+                    <img src="assets/img/blue.png">
+                    <h1>51</h1>
+                    <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>     
+                </a>
+                <a href="#52" id="button" class="route-button" onclick="displayInfo('52')">
+                  <img src="assets/img/blue.png">
+                  <h1>52</h1>
+                  <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>
+                </a>
+                <a href="#53" id="button" class="route-button" onclick="displayInfo('53')">
+                    <img src="assets/img/blue.png">
+                    <h1>53</h1>
+                    <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>
+                </a>
+                <a href="#55" id="button" class="route-button" onclick="displayInfo('55')">
+                    <img src="assets/img/brown.png">
+                    <h1>55</h1>
+                    <p>Tòa nhà Becamex- ĐHQT Miền Đông</p>
+                </a>
+                <a href="#39" id="button" class="route-button" onclick="displayInfo('39')">
+                    <img src="assets/img/red.png">
+                    <h1>39</h1>
+                    <p>Tòa nhà Becamex- KCN VSIP2</p>
+                </a>
+                <a href="#66" id="button" class="route-button" onclick="displayInfo('66')">
+                    <img src="assets/img/yellow.png">
+                    <h1>66</h1>
+                    <p>Tòa nhà Becamex- Hikari- ĐHQTMD</p>
+                </a>
+                <a href="#67" id="button" class="route-button" onclick="displayInfo('67')">
+                    <img src="assets/img/green.png">
+                    <h1>67</h1>
+                    <p>Hikari- Chợ Phú Chánh- Hikari</p>
+                </a>
+                <a href="#68" id="button" class="route-button" onclick="displayInfo('68')">
+                    <img src="assets/img/pink.png">
+                    <h1>68</h1>
+                    <p>Hikari- Nhà ở an sinh XH- KCN VSIP2</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        
+    <script>
+      var ps = new PerfectScrollbar('.routes',{wheelSpeed: 2, minScrollbarLength: 20});
+      const container = document.querySelector('#container');
+      container.scrollTop = 0;	  	 
+    </script>
+
+    </div>
+    
+    <div class="direction" id="direction-id">
+        
+      <img src="assets/img/direction-bg.png" id="direction-bg">
+      <button type="button" class="btn btn-info" id="search-btn">Find<img src="assets/img/search-icon-nobg-w.png" ></button>
+      
+      <img src="assets/img/switch-icon.png" width="24" height="24" id="switch-icon">
+      <div class="form-group" id="start-field">
+          <input type="text" class="form-control" id="starting-point" placeholder="Choose starting point, or click on map...">
+      </div>
+      
+      <div class="form-group" id="end-field">
+          <input type="text" class="form-control" id="destination-point" placeholder="Choose destination...">
+      </div>
+      <div class="form-group" id="number-of-trip">
+        <label>Max number of trips: </label>
+          <select class="form-control" id="sel1" style="width:60px;">
+            <option>1</option>
+            <option>2</option>
+            <option selected="selected">3</option>
+          </select>
+        </div> 
+
+    </div>
+    <button class="horizontal-collapse-btn btn btn-primary-outline" id="horizontal-collapse-btn-id" onclick="direction_collapse()" ></button>
+    <script src="assets/js/app.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -15,35 +174,40 @@
       }
     </style>
   </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: new google.maps.LatLng(11.058186, 106.6837316),
-          mapTypeId: 'terrain'
-        });
-        var script = document.createElement('script');
-		script.src = 'bus_info.js';	
-        document.getElementsByTagName('head')[0].appendChild(script);
-      }
+  <body>	
+    <div id="map"></div>	
+	<script> 
+		var poly;
+		var redLinepath;
+		var map;
+		
+	</script>
+	<script src='scripts/initMap.js'></script>
+	<script src='scripts/initMarkers.js'></script>
+	<script src='scripts/createMarkers.js'></script>
+	<script>		
+		function displayInfo(arg) {
+				createMarkers(arg);	 				
+		}
+		// <!-- just define a variable containing the bus stop. In the example, I use 'Becamex' string representing that idea. -->
+		// <!-- remember to change ID in the html to CLASS like, ID is somewhat unique! -->
+		
+		$('#button').click(function() {
+			var bus_tag = $('.bus51').text();
+			if (bus_tag.includes('Becamex'))
+				for (i=0; i<bus_markers.length; i++) {
+					// <!-- console.log(bus_markers[i].getPosition()); -->
+					if (bus_markers[i].info.getContent().includes('Becamex')) {
+						map.setCenter(bus_markers[i].getPosition());
+						map.setZoom(16);
+					}
+				}
+				
+	}	);
+	  </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&libraries=geometry&callback=initMap"
+		async defer></script>
 
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
-      window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {			
-          var coords = results.features[i].geometry.coordinates;		  
-		  var latLng = new google.maps.LatLng(coords[0],coords[1]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&callback=initMap"
-async defer></script>
   </body>
 </html>

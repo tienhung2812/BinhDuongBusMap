@@ -1,0 +1,600 @@
+body,html {
+    margin: 0px 0px 0px 0px;
+    overflow:hidden;
+    
+}
+
+/* Header */
+
+.header{
+	background-color:#d8f2f8;
+	box-shadow:0 1px 1px #ccc;
+	padding: 10px 20px;
+	height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.header #menu-icon{
+    padding-top:15px;
+}
+.dropbtn {
+    background-color: #d8f2f8;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #c3e0e6;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+.bus-route{
+    background-color: #cfd3d4;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	opacity: 0.85;
+	width: 360px;
+    height: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    
+}
+
+.bus-route-closed{
+    left:-360px;
+    opacity: 0;
+}
+
+.vertical-collapse-btn{
+    position:absolute; 
+    left:360px; 
+    top:50%;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    background-image: url("../img/back-icon-40.png") ;
+    background-repeat: no-repeat;
+    background-position: center; 
+    padding: 0;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    
+    padding: 70px 0px;
+}
+
+.vertical-collapse-btn:hover{
+    opacity: 1;
+    background-color: #cfd3d4;
+}
+
+.vertical-collapse-btn-closed{
+    left: 0;
+    background-image: url("../img/forward-icon-40.png");
+}
+
+.horizontal-collapse-btn{
+    position:absolute; 
+    left: 57%;
+    top:160px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    background-image: url("../img/up-icon-40.png") ;
+    background-repeat: no-repeat;
+    background-position: center; 
+    padding: 0;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    background-color: transparent;
+    padding: 0px 100px;
+}
+
+.horizontal-collapse-btn:hover{
+    opacity: 1;
+    background-color: #cfd3d4;
+}
+
+.horizontal-collapse-btn-closed{
+    top:80px;
+    background-image: url("../img/down-icon-40.png");
+}
+
+.horizontal-collapse-btn-vertical-closed{
+    left: 45%;
+}
+
+.bus-route h1{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 30px;
+	display: inline-block;
+}
+
+.bus-route #tuyenxe{
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.bus-route button{
+    padding: 0;
+}
+
+.bus-route_open{
+    position: absolute;
+    top:300px;
+    left:360px;
+}
+
+.nav-back-btn{
+    display:inline-block;
+    width: 40px;
+    height: 35px;
+    top:0;
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: center; 
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    background-color: #cfd3d4;
+
+}
+
+.nav-back-btn:hover{
+    opacity: 1;
+    background-color: #929697;
+}
+
+.nav-info h3{
+    display:inline-block;
+}
+
+.routes-hide{
+    transition: all 0.3 ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.result-show{
+    transition: all 0.4 ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+}
+
+.result-hide{
+    transition: all 0.4 ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#map{
+	height: 80%;
+}
+
+.bus-route .routes{
+    position: absolute;
+    height: 86%;
+    overflow: auto;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    transition: all 0.3 ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.bus-route .routes .container{
+    align-content: center;
+    
+}
+
+.bus-route .routes .container .row #button{
+    width: 319px;
+    height: 90px;
+    opacity: 0.8;
+    position: relative;
+    transition-timing-function: ease-out;
+    transition-duration: 0.1s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 0.1s;
+    border: solid #cfd3d4 0px;
+
+}
+
+.bus-route .routes .container .row #button:hover,.bus-route .routes .container .row #button:focus{
+    opacity: 1; 
+    border-top: solid #cfd3d4 1px;
+    border-left: solid #cfd3d4 1px;
+}
+
+.bus-route .routes .container .row #button img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.bus-route .routes .container .row #button h1{
+    position: absolute;
+    top: 15px;
+    left:0;
+    width: 90px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-family: 40px;
+}
+
+.bus-route .routes .container .row #button p{
+    position: absolute;
+    top: 10px;
+    left: 110px; 
+    width: 200px;
+    color: #262626;
+    font-weight: bold;
+    font-family: 25px;
+}
+
+.ps__rail-y {
+    margin: 120px 0;
+}
+
+.direction{
+    position: absolute;       
+    top: 80px;
+    left: 360px;
+    width:80%;
+    height: 95px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.direction-closed{
+    top:0;
+    opacity: 0;
+}
+
+.direction-bus-route-closed{
+    left:0px;
+}
+
+.direction #start-field{
+    position: absolute;
+    top:15px;
+    left: 15px;
+    width:300px;
+}
+
+.direction #end-field{
+    position: absolute;
+    top:15px;
+    left: 350px;
+    width:300px;
+}
+
+.direction #number-of-trip{
+    position: absolute;
+    top:15px;
+    left: 670px;
+    width: 230px;
+}
+
+.direction #number-of-trip label{
+    display : inline;
+    padding-right : 4px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px #82898a;
+}
+
+.direction #number-of-trip select{
+    display:inline;
+   
+}
+
+.direction #switch-icon{
+    position: absolute;
+    top: 23px;
+    left:320px;
+}
+
+.direction #search-btn{
+    position: absolute;
+    top: 65px;
+    left : 15px;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.direction #direction-bg{
+    opacity: 0.3;
+}
+
+.schedule .nav-item .active{
+    background-color: #f0f9ff;
+}
+
+.tab-pane{
+    padding: 0 20px;
+
+    height: 400px;
+}
+
+.tab-pane .row{
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    line-height: 30px;
+    position: relative;
+}
+
+.tab-pane .row a{
+    text-decoration: none;
+    
+    margin-left: 20px;
+    color: black;
+    font-size:16px;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tab-pane .row::after{
+    background-color: transparent;
+    border: 4px solid #929697;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    left: -15px;
+    content: '';
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.tab-pane .row:hover{
+    opacity: 1;
+    background-color: #dfdfdf;
+    font-weight: bold;
+}
+
+.nav-item .active{
+    font-weight: bold;
+}
+.panel[aria-expanded=true] .row{
+    opacity: 1;
+    background-color: #dfdfdf;
+    font-weight: bold;
+    
+    
+}
+.panel[aria-expanded=true] .row a{
+    font-weight: bold;
+}
+
+.panel[aria-expanded=true] .row::after{
+    border: 4px solid #262626
+}
+
+.panel-heading .row{
+    padding: 0px 5px;
+    border-radius: 0.2rem;
+}
+
+
+
+
+
+/* Timeline */
+
+.timeline {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: rgb(240, 240, 240);
+    top: 0;
+    bottom: 0;
+    margin-left: -6px;
+    border-radius: 0.2rem;
+}
+
+/* Container around content */
+.containeer {
+  box-sizing: border-box;
+    padding: 10px 15px;
+    position: relative;
+    background-color: inherit;
+    margin: 0;
+    margin-bottom: 0; 
+}
+
+
+/* The circles on the timeline */
+.containeer::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+/* Place the container to the right */
+.right {
+  box-sizing: border-box;
+}
+
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  box-sizing: border-box;
+    left: -16px;
+}
+
+/* The actual content */
+.content {
+  box-sizing: border-box;
+    padding: 10px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    margin: 0;
+}
+
+.content p{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media all and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    box-sizing: border-box;
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .containeer {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .containeer::before {
+    box-sizing: border-box;
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    box-sizing: border-box;
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+    box-sizing: border-box;
+    left: 0%;
+    
+  }
+}
+
+.tab-content .active{
+    overflow-y:auto;
+
+}
+
+#loadingBar_BG{
+    width: 360px;
+    left:0;
+    position: absolute;
+    height: 5px;
+}
+
+#loadingBar {
+    width: 1%;
+    height: 5px;
+    background-color: green;
+} 
+
+/* by phat */
+.contextmenu{
+  visibility:hidden;
+  background:#ffffff;
+  border:1px solid #8888FF;
+  z-index: 10;
+  position: relative;
+  width: 240px;
+  
+  font-size: 14px;
+  height: 100px;
+  width: 200px;
+}
+.contextmenu div{
+padding-left: 2px;
+}
+.contextmenu #menu1 {
+	padding-left : 10px;
+	padding-right : 10px;
+	padding-bottom: 2px;
+	padding-top : 2px;
+}
+
+.contextmenu #menu2 {
+	padding-left : 10px;
+	padding-right : 10px;
+	padding-bottom: 2px;
+	padding-top : 2px;
+}
+
+.contextmenu #menu1:hover {
+    background:#dbebd0;	
+	
+}
+
+.contextmenu #menu2:hover {
+    background:#dbebd0;
+}
+

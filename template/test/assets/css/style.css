@@ -1,0 +1,31 @@
+body {
+    margin: 0px 0px 0px 0px;
+}
+
+/* Header */
+
+.header{
+	background-color:#d8f2f8;
+	box-shadow:0 1px 1px #ccc;
+	padding: 20px 40px;
+	height: 90px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+}
+
+.bus-route{
+	background-color: #cfd3d4;
+	opacity: 0.64;
+}
+
+#map {
+	height: 100%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+  }
