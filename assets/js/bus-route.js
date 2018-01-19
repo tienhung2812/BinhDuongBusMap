@@ -2,37 +2,10 @@ $(function(){
 	$('div[onload]').trigger('onload');
 });
 
-var stationName=["Tòa nhà Becamex",
-                    "Sân vận động Gò Đậu - Bình Dương",
-                    "Bến xe khách tỉnh Bình Dương",
-                    "Ngã ba Lò Chén",
-                    "Nhà sách Bình Minh",
-                    "Công viên Phú Cường",
-                    "Chùa Bà Thiên Hậu",
-                    "Bệnh viện Phụ Sản Nhi Bình Dương",
-                    "Chợ Cây Dừa",
-                    "Công an phường Hiệp Thành",
-                    "Ngã Ba Đại Lộ Bình Dương - Huỳnh Văn Lũy ",
-                    "Thư viện Tỉnh Bình Dương ",
-                    "Bệnh viện Đa khoa Tỉnh Bình Dương",
-                    "Ngã tư Phạm Ngọc Thạch - Nguyễn Đức Thuận",
-                    "Trường trung tiểu học Petrus Ký",
-                    "Ngã tư Phạm Ngọc Thạch - Mỹ Phước Tân Vạn",
-                    "Trung tâm văn hoá thể thao Tp. Thủ Dầu Một",
-                    "Ngã tư Phạm Ngọc Thạch - Trần Ngọc Lên", 
-                    "Phạm Ngọc Thạch Số 1",
-                    "Ngã tư Đại lộ Hùng Vương - Võ Văn Kiệt",
-                    "SORA gardens",
-                    "Lucky Square",                
-                     "Phố Thương mại - Lê Lợi",
-                    "Phố Thương mại - Đồng Khởi",
-                    "Phố Thương mại - Lý Thái Tổ",
-                    "Khách sạn Becamex Thành phố Mới",
-                    "hikari",
-                    "Bảo hiểm xã hội tỉnh Bình Dương",
-                    "Aroma - Lê Lai",
-                    "Đại học Quốc tế Miền Đông",
-                    "Trường Ngô Thời Nhiệm"]
+var stationName;
+$.getJSON("assets/content/station.json", function(json) {
+    stationName = json;
+});
 
 function createBusStation(arg){
     var availableStation=[];
@@ -142,7 +115,7 @@ function getBusSchedule(arg){
     $.getJSON("assets/content/availableStation.json",function(stationData){
         console.log("Station data length: "+stationData.length + "\nNeed to update?");
         for(i=0;i<stationData.length;i++){
-            console.log("Station data:"+stationData[1].route);
+            console.log("Station data:"+stationData[i].route);
             if(stationData[i].route==arg){
                 
                 updateFile=false;
@@ -166,18 +139,39 @@ function addStationHtml(route,stationData){
         if(stationData[j].route==route){
             var input = '<div class="panel-group" id="accordion">';
             for(i=0;i<stationData[j].station.length;i++){
-                input+='					<div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#'+stationData[j].route+'-'+stationData[j].station[i]+'-'+'forward'+'" onclick="addTimelineHtml('+stationData[j].route+','+stationData[j].station[i]+')">'+
+                var station = stationData[j].station[i];
+                if(route==39||route==67||route==68){
+                    station=station-1;
+                }
+                if(route==67&&i==stationData[j].station.length-1){
+                    input+='					<div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#'+stationData[j].route+'-'+stationData[j].station[i]+'-e-'+'forward'+'" onclick="addTimelineHtml('+stationData[j].route+','+stationData[j].station[i]+',true)">'+
                 '						<div class="panel-heading">'+
                 '							<h4 class="panel-title row">'+
                 '								<span class="circle-icon"></span>'+
-                '								<a>'+stationName[stationData[j].station[i]]+'</a>'+
+                '								<a>'+stationName[station].Name+'</a>'+
+                '								'+
+                '							</h4>'+
+                '						</div>'+
+                '						<div id="'+stationData[j].route+'-'+stationData[j].station[i]+'-e-'+'forward" class="panel-collapse collapse in" >'+
+                '						</div>'+
+                '					</div>'+    
+                '				</div>';
+                }
+                else{
+                    input+='					<div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#'+stationData[j].route+'-'+stationData[j].station[i]+'-'+'forward'+'" onclick="addTimelineHtml('+stationData[j].route+','+stationData[j].station[i]+',false)">'+
+                '						<div class="panel-heading">'+
+                '							<h4 class="panel-title row">'+
+                '								<span class="circle-icon"></span>'+
+                '								<a>'+stationName[station].Name+'</a>'+
                 '								'+
                 '							</h4>'+
                 '						</div>'+
                 '						<div id="'+stationData[j].route+'-'+stationData[j].station[i]+'-'+'forward" class="panel-collapse collapse in" >'+
                 '						</div>'+
-                '					</div>'+
+                '					</div>'+    
                 '				</div>';
+                }
+                
             }
             input+='				</div>';
         }
@@ -185,21 +179,34 @@ function addStationHtml(route,stationData){
     $("#forward").append(input);
 }
 
-function addTimelineHtml(route,station){
+function addTimelineHtml(route,station,end){
     $("#loadingBar_BG").show();
     setBusRouteProgressBar(20);
     var date = new Date();
     var time = date.getHours()+":"+date.getMinutes();
-    if(getCount(document.getElementById(route+'-'+station+'-'+'forward'), false)==0){
-    console.log("Get timeline from route: "+route+" station: "+station);
+    if(end){
+        var id = route+'-'+station+'-e-'+'forward';
+    }
+    else{
+        var id = route+'-'+station+'-'+'forward';
+    }
+    
+    if(getCount(document.getElementById(id), false)==0){
+    console.log("Get timeline from route: "+route+" station: "+station+ " end:"+ end);
     $.getJSON("assets/content/bus-route.json",function(data){
         var input='<div class="panel-body">'+
         '								<div class="timeline">';
         setBusRouteProgressBar(50);
         for(i=0;i<data.length;i++){  
             if(data[i].route==route){
-                
                 var stationValue = "station"+(station+1);
+                if(route==39||route==67||route==68){
+                    stationValue = "station"+(station);
+                }
+                
+                if(end){
+                    stationValue += "-e";
+                }
                 if(data[i][stationValue].length>0){
                 input+='<div class="containeer right">'+
                 '										<div class="content">'+
@@ -212,7 +219,7 @@ function addTimelineHtml(route,station){
                 else{
                     input+=data[i][stationValue];
                 }
-                    
+                
                 input+='											</p>'+
                 '										</div>'+
                 '									</div>';
@@ -221,7 +228,12 @@ function addTimelineHtml(route,station){
         }
         input +='								</div>'+
         '							</div>';
-        $('#'+route+'-'+station+'-'+'forward').append(input);
+        if(end){
+            $('#'+route+'-'+station+'-e-'+'forward').append(input);
+        }else{
+            $('#'+route+'-'+station+'-'+'forward').append(input);
+        }
+        
     })
     
     }
