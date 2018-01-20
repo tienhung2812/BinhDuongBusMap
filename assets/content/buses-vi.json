@@ -1,0 +1,43 @@
+[
+    {
+        "route": 51,
+        "name": "Tòa nhà Becamex- ĐHQT Miền Đông",
+        "color" : "blue"
+    },
+    {
+        "route": 52,
+        "name": "Tòa nhà Becamex- ĐHQT Miền Đông",
+        "color" : "blue"
+    },
+    {
+        "route": 53,
+        "name": "Tòa nhà Becamex- ĐHQT Miền Đông",
+        "color" : "blue"
+    },
+    {
+        "route": 55,
+        "name": "Tòa nhà Becamex- ĐHQT Miền Đông",
+        "color" : "brown"
+    },
+    {
+        "route": 39,
+        "name": "Tòa nhà Becamex- KCN VSIP2",
+        "color" : "red"
+    },
+    {
+        "route": 66,
+        "name": "Tòa nhà Becamex- Hikari- ĐHQTMD",
+        "color" : "yellow"
+    },
+    {
+        "route": 67,
+        "name": "Hikari- Chợ Phú Chánh- Hikari",
+        "color" : "green"
+    }
+    ,
+    {
+        "route": 68,
+        "name": "Hikari- Nhà ở an sinh XH- KCN VSIP2",
+        "color" : "pink"
+    }
+]

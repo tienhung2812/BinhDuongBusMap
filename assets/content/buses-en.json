@@ -1,0 +1,43 @@
+[
+    {
+        "route": 51,
+        "name": "Becamex Building - Eastern International University",
+        "color": "blue"
+    },
+    {
+        "route": 52,
+        "name": "Becamex Building - Eastern International University",
+        "color": "blue"
+    },
+    {
+        "route": 53,
+        "name": "Becamex Building - Eastern International University",
+        "color": "blue"
+    },
+    {
+        "route": 55,
+        "name": "Becamex Building - Eastern International University",
+        "color": "brown"
+    },
+    {
+        "route": 39,
+        "name": "Becamex Building - VSIP2",
+        "color": "red"
+    },
+    {
+        "route": 66,
+        "name": "Becamex Building -Hikari - NMD ",
+        "color": "yellow"
+    },
+    {
+        "route": 67,
+        "name": "Hikari- Phu Chanh Market- Hikari",
+        "color": "green"
+    }
+    ,
+    {
+        "route": 68,
+        "name": "Hikari- Housing for Social Security - VSIP2",
+        "color": "pink"
+    }
+]

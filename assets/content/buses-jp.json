@@ -1,0 +1,43 @@
+[
+    {
+        "route": 51,
+        "name": "Becamexビルディング - 東部国際大学",
+        "color": "blue"
+    },
+    {
+        "route": 52,
+        "name": "Becamexビルディング - 東部国際大学",
+        "color": "blue"
+    },
+    {
+        "route": 53,
+        "name": "Becamexビルディング - 東部国際大学",
+        "color": "blue"
+    },
+    {
+        "route": 55,
+        "name": "Becamexビルディング - 東部国際大学",
+        "color": "brown"
+    },
+    {
+        "route": 39,
+        "name": "Becamexビルディング - VSIP2",
+        "color": "red"
+    },
+    {
+        "route": 66,
+        "name": "Becamexビル - ひかり - NMD",
+        "color": "yellow"
+    },
+    {
+        "route": 67,
+        "name": "光 - プチャン市場 - ひかり",
+        "color": "green"
+    }
+    ,
+    {
+        "route": 68,
+        "name": "ひかり - 社会保障のための住宅 - VSIP2",
+        "color": "pink"
+    }
+]

@@ -18,6 +18,26 @@ body,html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
+.header .icon{
+    display: inline-block;
+      
+}
+
+.header .language-switch{
+    position: absolute;
+    float: right;
+    right: 10px;
+    margin-top: 8px;
+}
+
+.header .language-switch .btn {
+    background-color: #bfc4c5;
+    border: 0px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+}
+.h
+
+
 .header #menu-icon{
     padding-top:15px;
 }
@@ -243,7 +263,7 @@ body,html {
     -webkit-transition-timing-function: ease-out;
     -webkit-transition-duration: 0.1s;
     border: solid #cfd3d4 0px;
-
+    
 }
 
 .bus-route .routes .container .row #button:hover,.bus-route .routes .container .row #button:focus{
@@ -251,6 +271,8 @@ body,html {
     border-top: solid #cfd3d4 1px;
     border-left: solid #cfd3d4 1px;
 }
+
+
 
 .bus-route .routes .container .row #button img{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
@@ -270,8 +292,8 @@ body,html {
 .bus-route .routes .container .row #button p{
     position: absolute;
     top: 10px;
-    left: 110px; 
-    width: 200px;
+    left: 100px; 
+    width: 220px;
     color: #262626;
     font-weight: bold;
     font-family: 25px;
