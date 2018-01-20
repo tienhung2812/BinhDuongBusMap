@@ -1,0 +1,10 @@
+{
+        "Buses":"BUSES",
+        "Search": "Find",
+        "TripMax": "Max number of trips:" ,
+        "starting-point":"Choose starting point, or click on map...",
+        "destination-point":"Choose destination...",
+        "Info": "Infomation",
+        "Forward": "Forward",
+        "Backward": "Backward"
+}

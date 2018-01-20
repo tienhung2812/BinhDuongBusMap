@@ -1,0 +1,314 @@
+[
+  {
+     "Code": 1,
+     "Name": "Tòa nhà Becamex"
+  },
+  {
+     "Code": 2,
+     "Name": "Sân vận động Gò Đậu - Bình Dương"
+  },
+  {
+     "Code": 3,
+     "Name": "Bến xe khách tỉnh Bình Dương"
+  },
+  {
+     "Code": 4,
+     "Name": "Ngã ba Lò Chén"
+  },
+  {
+     "Code": 5,
+     "Name": "Nhà sách Bình Minh"
+  },
+  {
+     "Code": 6,
+     "Name": "Công viên Phú Cường"
+  },
+  {
+     "Code": 7,
+     "Name": "Chùa Bà Thiên Hậu"
+  },
+  {
+     "Code": 8,
+     "Name": "Bệnh viện Phụ Sản Nhi Bình Dương"
+  },
+  {
+     "Code": 9,
+     "Name": "Chợ Cây Dừa"
+  },
+  {
+     "Code": 10,
+     "Name": "Công an phường Hiệp Thành"
+  },
+  {
+     "Code": 11,
+     "Name": "Ngã Ba Đại Lộ Bình Dương - Huỳnh Văn Lũy"
+  },
+  {
+     "Code": 12,
+     "Name": "Thư viện Tỉnh Bình Dương"
+  },
+  {
+     "Code": 13,
+     "Name": "Bệnh viện Đa khoa Tỉnh Bình Dương"
+  },
+  {
+     "Code": 14,
+     "Name": "Ngã tư Phạm Ngọc Thạch - Nguyễn Đức Thuận"
+  },
+  {
+     "Code": 15,
+     "Name": "Trường trung tiểu học Petrus Ký"
+  },
+  {
+     "Code": 16,
+     "Name": "Ngã tư Phạm Ngọc Thạch - Mỹ Phước Tân Vạn"
+  },
+  {
+     "Code": 17,
+     "Name": "Trung tâm văn hoá thể thao Tp. Thủ Dầu Một"
+  },
+  {
+     "Code": 18,  
+     "Name": "Ngã tư Phạm Ngọc Thạch - Trần Ngọc Lên"
+  },
+  {
+     "Code": 19,
+     "Name": "Phạm Ngọc Thạch Số 1"
+  },
+  {
+     "Code": 20,
+     "Name": "Ngã tư Đại lộ Hùng Vương - Võ Văn Kiệt"
+  },
+  {
+     "Code": 21,
+     "Name": "SORA gardens"
+  },
+  {
+     "Code": 22,
+     "Name": "Lucky Square"
+  },
+  {
+     "Code": 23,
+     "Name": "Phố Thương mại - Lê Lợi"
+  },
+  {
+     "Code": 24,
+     "Name": "Phố Thương mại - Đồng Khởi"
+  },
+  {
+     "Code": 25,
+     "Name": "Phố Thương mại - Lý Thái Tổ"
+  },
+  {
+     "Code": 26,
+     "Name": "Khách sạn Becamex Thành phố Mới"
+  },
+  {
+     "Code": 27,
+     "Name": "hikari"
+  },
+  {
+     "Code": 28,
+     "Name": "Bảo hiểm xã hội tỉnh Bình Dương"
+  },
+  {
+     "Code": 29,
+     "Name": "Aroma - Lê Lai"
+  },
+  {
+     "Code": 30,
+     "Name": "Đại học Quốc tế Miền Đông"
+  },
+  {
+     "Code": 31,
+     "Name": "Trường Ngô Thời Nhiệm"
+  },
+  {
+     "Code": 32,
+     "Name": "Ngã ba Cây Me"
+  },
+  {
+     "Code": 33,
+     "Name": "Ủy Ban Nhân Dân phường Phú Thọ"
+  },
+  {
+     "Code": 34,
+     "Name": "Cafe Lucky"
+  },
+  {
+     "Code": 35,
+     "Name": "Ngã tư Địa Chất"
+  },
+  {
+     "Code": 36,
+     "Name": "Ngã tư Lê Hồng Phong - Đại Lộ Bình Dương"
+  },
+  {
+     "Code": 37,
+     "Name": "Trường Cao Đẳng Y Tế Bình Dương"
+  },
+  {
+     "Code": 38,
+     "Name": "Khu dân cư Phú Hòa"
+  },
+  {
+     "Code": 39,
+     "Name": "Ngã ba Lê Hồng Phong - D1"
+  },
+  {
+     "Code": 40,
+     "Name": "Lê Hồng Phong Khu Phố 8"
+  },
+  {
+     "Code": 41,
+     "Name": "Trường trung học cơ sở Phú Hòa"
+  },
+  {
+     "Code": 42,
+     "Name": "Ngã ba Phú Lợi - Huỳnh Văn Nghệ"
+  },
+  {
+     "Code": 43,
+     "Name": "Ngã ba Phú Lợi - Lê Thị Trung"
+  },
+  {
+     "Code": 44,
+     "Name": "Cục Thống Kê Bình Dương"
+  },
+  {
+     "Code": 45,
+     "Name": "Trường Đại Học Mở"
+  },
+  {
+     "Code": 46,
+     "Name": "Ngã ba Huỳnh Văn Lũy - Lê Hồng Phong"
+  },
+  {
+     "Code": 47,
+     "Name": "Trung tâm văn hóa thể thao phường Phú Lợi"
+  },
+  {
+     "Code": 48,
+     "Name": "Ngã tư Huỳnh Văn Lũy - Mỹ Phước Tân Vạn"
+  },
+  {
+     "Code": 49,
+     "Name": "Ủy Ban Nhân Dân phường Phú Mỹ"
+  },
+  {
+     "Code": 50,
+     "Name": "Ngã ba Phú Mỹ"
+  },
+  {
+     "Code": 51,
+     "Name": "Ngã ba Huỳnh Văn Lũy - Trần Ngọc Lên"
+  },
+  {
+     "Code": 52,
+     "Name": "Phòng khám Đa khoa Khu vực Phú Mỹ"
+  },
+  {
+     "Code": 53,
+     "Name": "Ban QL Phát Triển Khu Liên Hợp Bình Dương"
+  },
+  {
+     "Code": 54,
+     "Name": "Chùa Hội An"
+  },
+  {
+     "Code": 55,
+     "Name": "Unitown - Lê Hoàn"
+  },
+  {
+     "Code": 56,
+     "Name": "Cổng VSIP 2"
+  },
+  {
+     "Code": 57,
+     "Name": "VSIP2 Thống Nhất - Đường số 2"
+  },
+  {
+     "Code": 58,
+     "Name": "VSIP2 Thống Nhất - Đường số 4"
+  },
+  {
+     "Code": 59,
+     "Name": "VSIP2 Thống Nhất - Dân Chủ"
+  },
+  {
+     "Code": 60,
+     "Name": "VSIP2 Thống Nhất - Đường số 6"
+  },
+  {
+     "Code": 61,
+     "Name": "VSIP2 Thống Nhất - Đường số 7"
+  },
+  {
+     "Code": 62,
+     "Name": "Cổng Băc Đại học Quốc tế Miền Đông"
+  },
+  {
+     "Code": 63,
+     "Name": "Becamex UDJ Lake View"
+  },
+  {
+     "Code": 64,
+     "Name": "Công viên trung tâm Thành phố Mới Bình Dươn"
+  },
+  {
+     "Code": 65,
+     "Name": "Trung tâm thể thao Thành phố Mới Bình Dương"
+  },
+  {
+     "Code": 66,
+     "Name": "Công ty Becamex Tokyu"
+  },
+  {
+     "Code": 67,
+     "Name": "MIDORI PARK"
+  },
+  {
+     "Code": 68,
+     "Name": "Chợ Hòa Lợi"
+  },
+  {
+     "Code": 69,
+     "Name": "Nhà ở an sinh xã hội Hòa Lợi"
+  },
+  {
+     "Code": 70,
+     "Name": "VSIP2 Dân Chủ - Vành Đai 1"
+  },
+  {
+     "Code": 71,
+     "Name": "VSIP2 Dân Chủ - Thống Nhất"
+  },
+  {
+     "Code": 72,
+     "Name": "Trường Nguyễn Khuyến"
+  },
+  {
+     "Code": 73,
+     "Name": "Đường số 3 - số 8"
+  },
+  {
+     "Code": 74,
+     "Name": "Đường số 3 - số 38"
+  },
+  {
+     "Code": 75,
+     "Name": "Đường số 3 - Trần Quốc Toản"
+  },
+  {
+     "Code": 76,
+     "Name": "Chợ Phú Chanh"
+  },
+  {
+     "Code": 77,
+     "Name": "Công ty VNTT"
+  },
+  {
+     "Code": 78,
+     "Name": "TDC Plaza"
+  }
+]

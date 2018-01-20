@@ -1,0 +1,50 @@
+[
+    {
+        "route":51,
+        "name":"Tuyến Xanh Biển",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":52,
+        "name":"Tuyến Xanh Biển",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":53,
+        "name":"Tuyến Xanh Biển",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":55,
+        "name":"Tuyến Nâu",
+        "color":"#d26d2a",
+        "code":"brown"
+    },
+    {
+        "route":66,
+        "name":"Tuyến Vàng",
+        "color":"#a69523",
+        "code":"yellow"
+    },
+    {
+        "route":68,
+        "name":"Tuyến Hồng",
+        "color":"#e15c8d",
+        "code":"pink"
+    },
+    {
+        "route":39,
+        "name":"Tuyến Đỏ",
+        "color":"#e26a5d",
+        "code":"red"
+    },
+    {
+        "route":67,
+        "name":"Tuyến Xanh Lá",
+        "color":"#49b577",
+        "code":"green"
+    }       
+]

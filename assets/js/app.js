@@ -90,7 +90,7 @@ function translate(langCode) {
     var translate = function (jsdata) {	
 	$("[key]").each (function (index) {
 		var strTr = jsdata [$(this).attr ('key')]; 
-	    $(this).html (strTr); 
+        $(this).html (strTr); 
     }); 
     $("#starting-point").attr("placeholder",jsdata["starting-point"]);
     $("#destination-point").attr("placeholder",jsdata["destination-point"]);
@@ -98,19 +98,20 @@ function translate(langCode) {
     
     
     if ($.inArray(langCode, langs) != -1) {
-        $.getJSON('assets/lang/' + langCode + '.json', translate); 
+        $.getJSON('assets/content/' + langCode + '/'+ langCode +'.json', translate); 
         $("html").attr("lang","en-"+langCode.toUpperCase());
         displayBusRoute(langCode);
-    }
+        if(getCount(document.getElementById("result"), false)!=0){
+            $("#result").empty();
+            route_button_onclick();    
+        }
         
+    }
     else{
-        $.getJSON('assets/lang/en.json', translate); 
-        $("html").attr("lang","en-EN");
-        displayBusRoute("en");
+        translate("en");
     }
         
 }
-
 var browserLangCode = navigator.language.substr(0,2);
 
 function displayBusRoute(lang){
@@ -120,7 +121,7 @@ function displayBusRoute(lang){
     if(getCount(document.getElementById("buses-display"), false)!=0){
         $("#buses-display").empty();
     }
-    $.getJSON("assets/content/buses-"+lang+".json",function(busesData){
+    $.getJSON("assets/content/"+lang+"/buses.json",function(busesData){
         setBusRouteProgressBar(50); 
         var input="";
         for(i=0;i<busesData.length;i++){
@@ -162,5 +163,4 @@ $().ready(function () {
 $("input[name='language']").change(function(){
     translate(this.id);
 });
-
 

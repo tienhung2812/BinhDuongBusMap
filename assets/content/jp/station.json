@@ -1,0 +1,314 @@
+[
+  {
+     "Code": 1,
+     "Name": "Becamexビルディング"
+  },
+  {
+     "Code": 2,
+     "Name": "ゴードースタジアム - ビンジュン省"
+  },
+  {
+     "Code": 3,
+     "Name": "ビン・ドゥン省バスステーション"
+  },
+  {
+     "Code": 4,
+     "Name": "ローチェンジャンクション"
+  },
+  {
+     "Code": 5,
+     "Name": "ビン・ミン書店"
+  },
+  {
+     "Code": 6,
+     "Name": "プークオンパーク"
+  },
+  {
+     "Code": 7,
+     "Name": "ティエンハウパゴダ"
+  },
+  {
+     "Code": 8,
+     "Name": "ビン・ドゥオン子供病院"
+  },
+  {
+     "Code": 9,
+     "Name": "ココナッツツリー市場"
+  },
+  {
+     "Code": 10,
+     "Name": "ヒープ・ターン・ワードの警察"
+  },
+  {
+     "Code": 11,
+     "Name": "Ba Duong Boulevard - フイン・ヴァン・ルイ"
+  },
+  {
+     "Code": 12,
+     "Name": "ビン・ドゥン省の図書館"
+  },
+  {
+     "Code": 13,
+     "Name": "ビン・ドゥン総合病院"
+  },
+  {
+     "Code": 14,
+     "Name": "Pham Ngoc Thachの交差点 - グエン・ドゥク・トゥアン"
+  },
+  {
+     "Code": 15,
+     "Name": "Petrus Ky中級学校"
+  },
+  {
+     "Code": 16,
+     "Name": "Pham Ngoc Thachの交差点 - My Phuoc Tan Van"
+  },
+  {
+     "Code": 17,
+     "Name": "HCMCのスポーツ文化センターThu Dau Mot"
+  },
+  {
+     "Code": 18,
+     "Name": "Pham Ngoc Thachクロスロード - Tran Ngoc Len"
+  },
+  {
+     "Code": 19,
+     "Name": "Pham Ngoc Thach No.1"
+  },
+  {
+     "Code": 20,
+     "Name": "Hung Vuong Boulevardの交差点 - Vo Van Kiet"
+  },
+  {
+     "Code": 21,
+     "Name": "ソラ庭園"
+  },
+  {
+     "Code": 22,
+     "Name": "ラッキースクエア"
+  },
+  {
+     "Code": 23,
+     "Name": "商業街 - ルーロイ"
+  },
+  {
+     "Code": 24,
+     "Name": "コマーシャルストリート - ドンコーイ"
+  },
+  {
+     "Code": 25,
+     "Name": "商業街 - Ly Thai to Street"
+  },
+  {
+     "Code": 26,
+     "Name": "ベアメックスニューシティホテル"
+  },
+  {
+     "Code": 27,
+     "Name": "光"
+  },
+  {
+     "Code": 28,
+     "Name": "ビン・ドゥン省の社会保険"
+  },
+  {
+     "Code": 29,
+     "Name": "アロマ - ル・ライ"
+  },
+  {
+     "Code": 30,
+     "Name": "イースタンインターナショナル大学"
+  },
+  {
+     "Code": 31,
+     "Name": "Ngo Thoi Nhiem学校"
+  },
+  {
+     "Code": 32,
+     "Name": "Cay Me Tertiary"
+  },
+  {
+     "Code": 33,
+     "Name": "Phu Tho区の人民委員会"
+  },
+  {
+     "Code": 34,
+     "Name": "ラッキーカフェ"
+  },
+  {
+     "Code": 35,
+     "Name": "地質学的交差点"
+  },
+  {
+     "Code": 36,
+     "Name": "Le Hong Phong交差点 - Binh Duong Boulevard"
+  },
+  {
+     "Code": 37,
+     "Name": "ビン・ドゥン医科大学"
+  },
+  {
+     "Code": 38,
+     "Name": "住宅Phu Hoa"
+  },
+  {
+     "Code": 39,
+     "Name": "Le Hong Phongジャンクション - D1"
+  },
+  {
+     "Code": 40,
+     "Name": "ル・ホン・フォン・クォーター8"
+  },
+  {
+     "Code": 41,
+     "Name": "フーホア中学校"
+  },
+  {
+     "Code": 42,
+     "Name": "Phu Loiジャンクション - Huynh Van Nghe"
+  },
+  {
+     "Code": 43,
+     "Name": "Phu Loiジャンクション - Le Thi Trung"
+  },
+  {
+     "Code": 44,
+     "Name": "ビン・ドゥン統計局"
+  },
+  {
+     "Code": 45,
+     "Name": "オープンカレッジ"
+  },
+  {
+     "Code": 46,
+     "Name": "Huynh Van Luy Third Cross - ル・ホン・フォン"
+  },
+  {
+     "Code": 47,
+     "Name": "プーロイスポーツ文化センター"
+  },
+  {
+     "Code": 48,
+     "Name": "Huynh Van Luy Crossing - 私のPhuoc Tan Van"
+  },
+  {
+     "Code": 49,
+     "Name": "フー・マイ・ワードの人民委員会"
+  },
+  {
+     "Code": 50,
+     "Name": "プーマイジャンクション"
+  },
+  {
+     "Code": 51,
+     "Name": "Huynh Van Luy交差点 - Tran Ngoc Len"
+  },
+  {
+     "Code": 52,
+     "Name": "Phu My General Clinic"
+  },
+  {
+     "Code": 53,
+     "Name": "ビンジュン複合開発区"
+  },
+  {
+     "Code": 54,
+     "Name": "ホイアン寺院"
+  },
+  {
+     "Code": 55,
+     "Name": "ユニオンタウン - ルホーン"
+  },
+  {
+     "Code": 56,
+     "Name": "VSIPゲートウェイ2"
+  },
+  {
+     "Code": 57,
+     "Name": "VSIP2トンニャット - 道路No.2"
+  },
+  {
+     "Code": 58,
+     "Name": "VSIP2トンナット - 第4道路"
+  },
+  {
+     "Code": 59,
+     "Name": "VSIP2統一 - 民主主義"
+  },
+  {
+     "Code": 60,
+     "Name": "VSIP2トンナット - ロード6"
+  },
+  {
+     "Code": 61,
+     "Name": "VSIP2トン・ナット - ロード7"
+  },
+  {
+     "Code": 62,
+     "Name": "Northeastern International University Gateway"
+  },
+  {
+     "Code": 63,
+     "Name": "Becamex UDJレイクビュー"
+  },
+  {
+     "Code": 64,
+     "Name": "ビン・ドゥオンニューシティセンターパーク"
+  },
+  {
+     "Code": 65,
+     "Name": "ビン・ドゥオン新都市スポーツセンター"
+  },
+  {
+     "Code": 66,
+     "Name": "Becamex東急カンパニー"
+  },
+  {
+     "Code": 67,
+     "Name": "ミドリ公園"
+  },
+  {
+     "Code": 68,
+     "Name": "ホアイロイ市場"
+  },
+  {
+     "Code": 69,
+     "Name": "ホアロー社会保障居留地"
+  },
+  {
+     "Code": 70,
+     "Name": "VSIP2民主主義 - ベルト1"
+  },
+  {
+     "Code": 71,
+     "Name": "VSIP 2民主主義 - 統一"
+  },
+  {
+     "Code": 72,
+     "Name": "Nguyen Khuyen School"
+  },
+  {
+     "Code": 73,
+     "Name": "3号線 - 8号線"
+  },
+  {
+     "Code": 74,
+     "Name": "3号線 - 38号線"
+  },
+  {
+     "Code": 75,
+     "Name": "道3号 - トランクトゥーン"
+  },
+  {
+     "Code": 76,
+     "Name": "プーチャーンマーケット"
+  },
+  {
+     "Code": 77,
+     "Name": "VNTT会社"
+  },
+  {
+     "Code": 78,
+     "Name": "TDCプラザ"
+  }
+]

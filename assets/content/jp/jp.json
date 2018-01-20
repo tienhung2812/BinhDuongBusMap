@@ -1,0 +1,10 @@
+{
+    "Buses":"車両",
+    "Search": "検索",
+    "TripMax": "最大トリップ数:" ,
+    "starting-point":"出発地点を選択するか、地図をクリックしてください...",
+    "destination-point":"目的地を選択...",
+    "Info": "情報",
+    "Forward": "前進",
+    "Backward": "後方に"
+}

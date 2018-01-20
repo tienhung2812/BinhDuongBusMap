@@ -1,0 +1,314 @@
+[
+  {
+     "Code": 1,
+     "Name": "Becamex Building"
+  },
+  {
+     "Code": 2,
+     "Name": "Go Dau Stadium - Binh Duong Province"
+  },
+  {
+     "Code": 3,
+     "Name": "Bus station of Binh Duong province"
+  },
+  {
+     "Code": 4,
+     "Name": "Lo Chen junction"
+  },
+  {
+     "Code": 5,
+     "Name": "Binh Minh Bookstore"
+  },
+  {
+     "Code": 6,
+     "Name": "Phu Cuong Park"
+  },
+  {
+     "Code": 7,
+     "Name": "Thien Hau pagoda"
+  },
+  {
+     "Code": 8,
+     "Name": "Binh Duong Children's Hospital"
+  },
+  {
+     "Code": 9,
+     "Name": "Coconut Tree Market"
+  },
+  {
+     "Code": 10,
+     "Name": "Police of Hiep Thanh Ward"
+  },
+  {
+     "Code": 11,
+     "Name": "Ba Duong Boulevard - Huynh Van Luy"
+  },
+  {
+     "Code": 12,
+     "Name": "Binh Duong Provincial Library"
+  },
+  {
+     "Code": 13,
+     "Name": "Binh Duong General Hospital"
+  },
+  {
+     "Code": 14,
+     "Name": "Pham Ngoc Thach crossroad - Nguyen Duc Thuan"
+  },
+  {
+     "Code": 15,
+     "Name": "Petrus Ky Intermediate School"
+  },
+  {
+     "Code": 16,
+     "Name": "Pham Ngoc Thach crossroad - My Phuoc Tan Van"
+  },
+  {
+     "Code": 17,
+     "Name": "Sports and Culture Center of HCMC Thu Dau Mot"
+  },
+  {
+     "Code": 18,
+     "Name": "Pham Ngoc Thach crossroad - Tran Ngoc Len"
+  },
+  {
+     "Code": 19,
+     "Name": "Pham Ngoc Thach No.1"
+  },
+  {
+     "Code": 20,
+     "Name": "Crossroads of Hung Vuong Boulevard - Vo Van Kiet"
+  },
+  {
+     "Code": 21,
+     "Name": "SORA gardens"
+  },
+  {
+     "Code": 22,
+     "Name": "Lucky Square"
+  },
+  {
+     "Code": 23,
+     "Name": "Commercial Street - Le Loi"
+  },
+  {
+     "Code": 24,
+     "Name": "Commercial Street - Dong Khoi"
+  },
+  {
+     "Code": 25,
+     "Name": "Commercial Street - Ly Thai To Street"
+  },
+  {
+     "Code": 26,
+     "Name": "Becamex New City Hotel"
+  },
+  {
+     "Code": 27,
+     "Name": "hikari"
+  },
+  {
+     "Code": 28,
+     "Name": "Social insurance of Binh Duong province"
+  },
+  {
+     "Code": 29,
+     "Name": "Aroma - Le Lai"
+  },
+  {
+     "Code": 30,
+     "Name": "Eastern International University"
+  },
+  {
+     "Code": 31,
+     "Name": "Ngo Thoi Nhiem school"
+  },
+  {
+     "Code": 32,
+     "Name": "Cay Me Tertiary"
+  },
+  {
+     "Code": 33,
+     "Name": "People's Committee of Phu Tho Ward"
+  },
+  {
+     "Code": 34,
+     "Name": "Lucky Cafe"
+  },
+  {
+     "Code": 35,
+     "Name": "Geological Intersection"
+  },
+  {
+     "Code": 36,
+     "Name": "Le Hong Phong intersection - Binh Duong Boulevard"
+  },
+  {
+     "Code": 37,
+     "Name": "Binh Duong Medical College"
+  },
+  {
+     "Code": 38,
+     "Name": "Residential Phu Hoa"
+  },
+  {
+     "Code": 39,
+     "Name": "Le Hong Phong junction - D1"
+  },
+  {
+     "Code": 40,
+     "Name": "Le Hong Phong Quarter 8"
+  },
+  {
+     "Code": 41,
+     "Name": "Phu Hoa Junior High School"
+  },
+  {
+     "Code": 42,
+     "Name": "Phu Loi junction - Huynh Van Nghe"
+  },
+  {
+     "Code": 43,
+     "Name": "Phu Loi junction - Le Thi Trung"
+  },
+  {
+     "Code": 44,
+     "Name": "Binh Duong Statistical Office"
+  },
+  {
+     "Code": 45,
+     "Name": "Open college"
+  },
+  {
+     "Code": 46,
+     "Name": "Huynh Van Luy Third Cross - Le Hong Phong"
+  },
+  {
+     "Code": 47,
+     "Name": "Phu Loi Sports and Cultural Center"
+  },
+  {
+     "Code": 48,
+     "Name": "Huynh Van Luy Crossing - My Phuoc Tan Van"
+  },
+  {
+     "Code": 49,
+     "Name": "People's Committee of Phu My Ward"
+  },
+  {
+     "Code": 50,
+     "Name": "Phu My junction"
+  },
+  {
+     "Code": 51,
+     "Name": "Huynh Van Luy Intersection - Tran Ngoc Len"
+  },
+  {
+     "Code": 52,
+     "Name": "Phu My General Clinic"
+  },
+  {
+     "Code": 53,
+     "Name": "Binh Duong Complex Development Zone"
+  },
+  {
+     "Code": 54,
+     "Name": "Hoi An temple"
+  },
+  {
+     "Code": 55,
+     "Name": "Unitown - Le Hoan"
+  },
+  {
+     "Code": 56,
+     "Name": "VSIP Gateway 2"
+  },
+  {
+     "Code": 57,
+     "Name": "VSIP2 Thong Nhat - Road No.2"
+  },
+  {
+     "Code": 58,
+     "Name": "VSIP2 Thong Nhat - Road No.4"
+  },
+  {
+     "Code": 59,
+     "Name": "VSIP2 Unified - Democracy"
+  },
+  {
+     "Code": 60,
+     "Name": "VSIP2 Thong Nhat - Road 6"
+  },
+  {
+     "Code": 61,
+     "Name": "VSIP2 Thong Nhat - Road 7"
+  },
+  {
+     "Code": 62,
+     "Name": "Northeastern International University Gateway"
+  },
+  {
+     "Code": 63,
+     "Name": "Becamex UDJ Lake View"
+  },
+  {
+     "Code": 64,
+     "Name": "Binh Duong New City Center Park"
+  },
+  {
+     "Code": 65,
+     "Name": "Binh Duong New City Sports Center"
+  },
+  {
+     "Code": 66,
+     "Name": "Becamex Tokyu Company"
+  },
+  {
+     "Code": 67,
+     "Name": "MIDORI PARK"
+  },
+  {
+     "Code": 68,
+     "Name": "Hoa Loi Market"
+  },
+  {
+     "Code": 69,
+     "Name": "Hoa Lo Social Security Residence"
+  },
+  {
+     "Code": 70,
+     "Name": "VSIP2 Democracy - Belt 1"
+  },
+  {
+     "Code": 71,
+     "Name": "VSIP 2 Democracy - Unification"
+  },
+  {
+     "Code": 72,
+     "Name": "Nguyen Khuyen School"
+  },
+  {
+     "Code": 73,
+     "Name": "Road No. 3 - No.8"
+  },
+  {
+     "Code": 74,
+     "Name": "Road No. 3 - No. 38"
+  },
+  {
+     "Code": 75,
+     "Name": "Road No. 3 - Tran Quoc Toan"
+  },
+  {
+     "Code": 76,
+     "Name": "Phu Chanh Market"
+  },
+  {
+     "Code": 77,
+     "Name": "VNTT Company"
+  },
+  {
+     "Code": 78,
+     "Name": "TDC Plaza"
+  }
+]

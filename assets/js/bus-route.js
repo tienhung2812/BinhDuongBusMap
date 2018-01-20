@@ -2,15 +2,12 @@ $(function(){
 	$('div[onload]').trigger('onload');
 });
 
-var stationName;
-$.getJSON("assets/content/station.json", function(json) {
-    stationName = json;
-});
+
 
 function createBusStation(arg){
     var availableStation=[];
     var station="";
-        $.getJSON("assets/content/bus-route.json", function(data) {
+        $.getJSON("assets/content/schedule.json", function(data) {
             for(i=0;i<data.length;i++){
                 if(data[i].route==arg){
                     for(j=0;j<stationName.length;j++){
@@ -45,69 +42,40 @@ function createBusStation(arg){
         })
 }
 
-var routeName =[
-    {
-        "route":51,
-        "name":"Tuyến Xanh Biển",
-        "color":"#2276af",
-        "code":"blue"
-    },
-    {
-        "route":52,
-        "name":"Tuyến Xanh Biển",
-        "color":"#2276af",
-        "code":"blue"
-    },
-    {
-        "route":53,
-        "name":"Tuyến Xanh Biển",
-        "color":"#2276af",
-        "code":"blue"
-    },
-    {
-        "route":55,
-        "name":"Tuyến Nâu",
-        "color":"#d26d2a",
-        "code":"brown"
-    },
-    {
-        "route":66,
-        "name":"Tuyến Vàng",
-        "color":"#a69523",
-        "code":"yellow"
-    },
-    {
-        "route":68,
-        "name":"Tuyến Hồng",
-        "color":"#e15c8d",
-        "code":"pink"
-    },
-    {
-        "route":39,
-        "name":"Tuyến Đỏ",
-        "color":"#e26a5d",
-        "code":"red"
-    },
-    {
-        "route":67,
-        "name":"Tuyến Xanh Lá",
-        "color":"#49b577",
-        "code":"green"
-    }       
-]
+
 var route = window.location.href.split('#');
 route =route[route.length-1];
-for(i=0;i<routeName.length;i++){
-    if(route==routeName[i].route){
-        $("#route-name").html(route+'-'+routeName[i].name);
-        $("#route-name").attr("style","color:"+routeName[i].color+";");
-        $('#nav-back-btn').append('<img src="assets/img/back-icon-20-'+routeName[i].code+'.png">')
+var lang=$('input[name=language]:checked').attr("id");
+$.getJSON("assets/content/"+lang+"/buses-name.json",function(routeName){
+    for(i=0;i<routeName.length;i++){
+        if(route==routeName[i].route){
+            $("#route-name").html(route+'-'+routeName[i].name);
+            $("#route-name").attr("style","color:"+routeName[i].color+";");
+            $('#nav-back-btn').append('<img src="assets/img/back-icon-20-'+routeName[i].code+'.png">');
+            
+        }
     }
+});
+$.getJSON("assets/content/"+lang+"/"+lang+".json",function(jsdata){
+    $("[key]").each (function (index) {
+		var strTr = jsdata [$(this).attr ('key')]; 
+        $(this).html (strTr); 
+        
+    }); 
+});
+
+var stationName;
+function getStationName(){
+    $.getJSON("assets/content/"+lang+"/station.json", function(json) {
+        stationName = json;
+    });
+    console.log("Get station:"+lang);
 }
+getStationName();
 
-
-function getBusSchedule(arg){
-    arg=route;
+function getBusSchedule(){
+    var arg=route;
+    
     // var route = this.href.substring(this.href.indexOf("#")+1);
     console.log("Search station:"+arg);
     var availableStation=[];
@@ -115,9 +83,8 @@ function getBusSchedule(arg){
     $.getJSON("assets/content/availableStation.json",function(stationData){
         console.log("Station data length: "+stationData.length + "\nNeed to update?");
         for(i=0;i<stationData.length;i++){
-            console.log("Station data:"+stationData[i].route);
             if(stationData[i].route==arg){
-                
+                console.log("Station data:"+stationData[i].route);
                 updateFile=false;
                 
             }
@@ -193,7 +160,7 @@ function addTimelineHtml(route,station,end){
     
     if(getCount(document.getElementById(id), false)==0){
     console.log("Get timeline from route: "+route+" station: "+station+ " end:"+ end);
-    $.getJSON("assets/content/bus-route.json",function(data){
+    $.getJSON("assets/content/schedule.json",function(data){
         var input='<div class="panel-body">'+
         '								<div class="timeline">';
         setBusRouteProgressBar(50);
@@ -298,6 +265,4 @@ function resetBusRouteProgressBar(){
  
     
 }
-
-
 

@@ -1,0 +1,50 @@
+[
+    {
+        "route":51,
+        "name":"Blue Route",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":52,
+        "name":"Blue Route",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":53,
+        "name":"Blue Route",
+        "color":"#2276af",
+        "code":"blue"
+    },
+    {
+        "route":55,
+        "name":"Brown Route",
+        "color":"#d26d2a",
+        "code":"brown"
+    },
+    {
+        "route":66,
+        "name":"Yellow Route",
+        "color":"#a69523",
+        "code":"yellow"
+    },
+    {
+        "route":68,
+        "name":"Pink Route",
+        "color":"#e15c8d",
+        "code":"pink"
+    },
+    {
+        "route":39,
+        "name":"Red Route",
+        "color":"#e26a5d",
+        "code":"red"
+    },
+    {
+        "route":67,
+        "name":"Green Route",
+        "color":"#49b577",
+        "code":"green"
+    }       
+]
