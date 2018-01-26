@@ -1,8 +1,15 @@
 $(function(){
 	$('div[onload]').trigger('onload');
 });
+var lang=$('input[name=language]:checked').attr("id");
 
-
+$.getJSON("assets/content/"+lang+"/"+lang+".json",function(jsdata){
+    $("[key]").each (function (index) {
+		var strTr = jsdata [$(this).attr ('key')]; 
+        $(this).html (strTr); 
+        
+    }); 
+});
 
 function createBusStation(arg){
     var availableStation=[];
@@ -45,7 +52,6 @@ function createBusStation(arg){
 
 var route = window.location.href.split('#');
 route =route[route.length-1];
-var lang=$('input[name=language]:checked').attr("id");
 $.getJSON("assets/content/"+lang+"/buses-name.json",function(routeName){
     for(i=0;i<routeName.length;i++){
         if(route==routeName[i].route){
@@ -56,13 +62,7 @@ $.getJSON("assets/content/"+lang+"/buses-name.json",function(routeName){
         }
     }
 });
-$.getJSON("assets/content/"+lang+"/"+lang+".json",function(jsdata){
-    $("[key]").each (function (index) {
-		var strTr = jsdata [$(this).attr ('key')]; 
-        $(this).html (strTr); 
-        
-    }); 
-});
+
 
 var stationName;
 function getStationName(){

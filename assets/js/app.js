@@ -98,13 +98,14 @@ function translate(langCode) {
     
     
     if ($.inArray(langCode, langs) != -1) {
-        $.getJSON('assets/content/' + langCode + '/'+ langCode +'.json', translate); 
-        $("html").attr("lang","en-"+langCode.toUpperCase());
-        displayBusRoute(langCode);
         if(getCount(document.getElementById("result"), false)!=0){
             $("#result").empty();
             route_button_onclick();    
         }
+        $.getJSON('assets/content/' + langCode + '/'+ langCode +'.json', translate); 
+        $("html").attr("lang","en-"+langCode.toUpperCase());
+        displayBusRoute(langCode);
+        
         
     }
     else{
