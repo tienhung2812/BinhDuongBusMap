@@ -98,7 +98,7 @@ function getBusSchedule(){
         }
         
     })
-      
+     	
 };
  
 function addStationHtml(route,stationData){
@@ -205,6 +205,16 @@ function addTimelineHtml(route,station,end){
     
     }
     setBusRouteProgressBar(100);
+    // Zoom to clicked station 
+	var clickedStation = document.getElementById(route+"-"+station+"-forward").previousElementSibling.firstElementChild.innerText;	
+	// console.log(document.getElementById(route+"-"+station+"-forward").previousElementSibling.firstElementChild.innerText);
+	console.log(clickedStation);
+	for (i=0; i<bus_markers.length; i++) {
+		if (bus_markers[i].info.getContent().includes(clickedStation)) {
+			map.panTo(bus_markers[i].getPosition());
+			map.setZoom(16);
+		}
+	}
 }
 
 function getCount(parent, getChildrensChildren){

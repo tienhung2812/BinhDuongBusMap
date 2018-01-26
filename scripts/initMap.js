@@ -6,30 +6,49 @@ var startMarker;
 var endMarker;
 var myLocation;
 var bus_markers = [];
+
 function initMap() {			
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 14,
 		center: new google.maps.LatLng(11.058186, 106.6837316),
-		mapTypeId: 'roadmap'
+		mapTypeId: 'roadmap',
+		zoomControl: true		
 	});
 	poly = new google.maps.Polyline({
-			  // path :  pinkLinePath, //set path to display on the map
 			  strokeColor: '#ff0000',
-			  strokeOpacity: 1.0,
-			  strokeWeight: 3
+			  strokeOpacity: 0.6,
+			  strokeWeight: 4,			  
 			});
+	startMarker = new google.maps.Marker();
+	endMarker = new google.maps.Marker();			
 	poly.setMap(map);	
 	// Add a listener for the click event
 	// These are for drawing a bus route, just click on the map to drawing
 	// If a part of path needs to be deleted, click on the current drawn line
 	// Finally, right click to save to a file
-	// map.addListener('click', addLatLng);		
-	// poly.addListener('click', removeLatLng);
+	// map.addListener('click', addLatLng);	
+	// poly.addListener('click', removeLatLng);	
+	// only when need to draw new route
+	// If rightclick on the map, a popup wil be shown and user can save a recent drawn bus route path
+	// google.maps.event.addListener(map, "rightclick", function(event) {
+	// 	download('bus_data.txt', path.getArray());			
+	// });	
 	
 	google.maps.event.addListener(map, "rightclick",function(event){showContextMenu(event.latLng);});
-	google.maps.event.addListener(map, 'click', function() {$('.contextmenu').remove();});
-	startMarker = new google.maps.Marker();
-	endMarker = new google.maps.Marker();
+	google.maps.event.addListener(map, 'click', function() {$('.contextmenu').remove();});	
+	var count = 1; // count number of time that a user click
+	google.maps.event.addListener(map, 'click', function(event) {		
+			myLocation = event.latLng;
+			if (count == 1) { 
+				addStartPoint();
+				count = 2;
+			}
+			else if (count ==2) { 
+				addDestPoint();
+				count = 3;
+			}
+	});
+				
 	var directionsService = new google.maps.DirectionsService;
 	var directionsDisplay = new google.maps.DirectionsRenderer;
 	directionsDisplay.setMap(map);
@@ -175,25 +194,6 @@ function addDestPoint() {
 		location: closestMarker2[0].getPosition(),
 		stopover: true
 	});
-	// display suitable bus route
-	// var str1 = closestMarker1[0].info.getContent();
-	// var str2 = closestMarker2[0].info.getContent();
-	// console.log('str1: '+ str1);
-	// console.log('str2: '+ str2);
-	// for (x in str1.slice(str1.lastIndexOf(':')+1).split(", ")) {
-		// // console.log('str1: '+ str1.slice(str1.lastIndexOf(':')+1).split(", ")[x].trim());
-		// for (y in str2.slice(str1.lastIndexOf(':')+1).split(", ")) {
-			// if (str1.slice(str1.lastIndexOf(':')+1).split(", ")[x].trim() == str2.slice(str2.lastIndexOf(':')+1).split(", ")[y].trim()) {
-				// console.log('match: '+str2.slice(str2.lastIndexOf(':')+1).split(", ")[y].trim());
-			// }
-		// };
-	// };
-	// if (closestMarker1[0].info.getContent().slice(11))  {
-		// poly.setPath(blueLinePath);
-		// poly.setOptions({strokeColor:'#0000ff'});
-	// };
-	// waypts.push(closestMarker[1]);
-	// console.log(closestMarker[0].getPosition().toString());
 	directionsService.route({
 	  origin: startPoint,
 	  waypoints: waypts1,
@@ -254,25 +254,12 @@ function initAllMarkers() {
 			marker_map = this.getMap();
 			this.info.open(marker_map,this);
 			var data = '{lat: '+event.latLng.lat()+', lng: '+event.latLng.lng()+'}';
-			// Comment because only need when drawing
+			// Comment because only need when drawing new path
 			// var path = poly.getPath();
 			// path.push(event.latLng);				
 		});
 	}
 	//end for loop 
 	}
-	
-	// $.getJSON( "bus_all.json", function( data ) {
-	  // var items = [];
-	  // $.each( data, function( key, val ) {
-		// // items.push( "<li id='" + key + "'>" + val + "</li>" );
-		// console.log(key + ": " + val);
-	  // });
-	 
-	  // $( "<ul/>", {
-		// "class": "my-new-list",
-		// html: items.join( "" )
-	  // }).appendTo( "body" );
-	// });
 		
 }

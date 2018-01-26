@@ -72,8 +72,8 @@ function initMarkers(busNumber,script) {
 			this.info.open(marker_map,this);
 			var data = '{lat: '+event.latLng.lat()+', lng: '+event.latLng.lng()+'}';
 			// Comment because only need when drawing
-			// var path = poly.getPath();
-			// path.push(event.latLng);				
+			var path = poly.getPath();
+			path.push(event.latLng);				
 		});
 	}
 	//end for loop 

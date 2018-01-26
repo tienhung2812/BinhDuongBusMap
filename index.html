@@ -30,19 +30,7 @@
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-112380273-1');
-	</script>
-
-      <style>
-          #map {
-            height: 90%;
-          }
-
-          html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-          }
-        </style>
+	</script>     
   </head>
   <body>
     <!-- Header -->
@@ -154,7 +142,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 90%;		
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -167,13 +155,10 @@
   <body>	
     <div id="map"></div>	
 	<script> 
-		var poly;
-		var redLinepath;
-		var map;
-		
+		var poly;	
+		var map;		
 	</script>
 	<script src='scripts/initMap.js'></script>
-	<script src='scripts/initMarkers.js'></script>
 	<script src='scripts/createMarkers.js'></script>
 	<script>		
 		function displayInfo(arg) {
@@ -181,19 +166,29 @@
 		}
 		// <!-- just define a variable containing the bus stop. In the example, I use 'Becamex' string representing that idea. -->
 		// <!-- remember to change ID in the html to CLASS like, ID is somewhat unique! -->
+
+		<!-- $(document).click(function(event) { -->
+			<!-- var text = $(event.target).text(); -->
+			<!-- console.log(event.target.id); -->
+		<!-- }); -->		
 		
-		$('#button').click(function() {
-			var bus_tag = $('.bus51').text();
-			if (bus_tag.includes('Becamex'))
-				for (i=0; i<bus_markers.length; i++) {
-					// <!-- console.log(bus_markers[i].getPosition()); -->
-					if (bus_markers[i].info.getContent().includes('Becamex')) {
-						map.setCenter(bus_markers[i].getPosition());
-						map.setZoom(16);
-					}
-				}
+		<!-- $(".51-1-forward").onload(function() { -->
+			<!-- alert('xxx'); -->
+			<!-- var bus_tag = $('.bus51').text(); -->
+			<!-- if (bus_tag.includes('Becamex')) -->
+				<!-- for (i=0; i<bus_markers.length; i++) { -->
+					<!-- // console.log(bus_markers[i].getPosition()); -->
+					<!-- if (bus_markers[i].info.getContent().includes('Becamex')) { -->
+						<!-- map.setCenter(bus_markers[i].getPosition()); -->
+						<!-- map.setZoom(16); -->
+					<!-- } -->
+				<!-- } -->
 				
-	}	);
+		<!-- }	); -->
+		
+		
+		
+		
 	  </script>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90&libraries=geometry&callback=initMap"
