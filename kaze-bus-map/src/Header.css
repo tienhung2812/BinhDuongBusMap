@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+header{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    background-color: #d8f2f8;
+    top:0;
+    height: 80px; 
+    width: 100%;
+  
+}
+
+.logo{
+    position: absolute;
+    left:0;
+    height: 80px;
+}
+
+.logoContent{
+    display: flex;
+}
+
+.logo .logoImage img{
+    height: 80px;
+    width: auto;
+}
+
+.logo .logoName{
+    display: flex;
+    color: rgb(79, 79, 79);
+    padding: 20px 0;
+}
+
+.logo .logoContent .logoName h1{
+    padding-right: 10px;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: bold;
+}
+
+.logo .logoContent .logoName h1:last-child{
+    color:rgb(33,124,144);
+}
+
+.menu{
+    position: absolute;
+    right:0;
+    top:0;
+}
