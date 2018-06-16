@@ -1,0 +1,67 @@
+.Sidebar{
+    background-color: #cfd3d4;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	opacity: 0.85;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.Sidebar .collapseButton{
+    position: absolute;
+    left: 300px;
+    background-color: #cfd3d4;
+    opacity: 0.55;
+    font-size: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.Sidebar .collapseButton:hover{
+    opacity: 1;
+}
+.Sidebar-close .collapseButton-close:hover {
+    opacity: 1;
+}
+.Sidebar .collapseButton .fa{
+    line-height: 1.42857143;
+    transform: rotate(180deg);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.Sidebar-close{
+    background-color: #cfd3d4;
+	position: absolute;
+	top: 80px;
+	left: -300px;
+	opacity: 0.85;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+.Sidebar-close .collapseButton-close{
+    position: absolute;
+    left: 300px;
+    background-color: #cfd3d4;
+    opacity: 0.55;
+    font-size: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.Sidebar-close .collapseButton-close .fa{
+    line-height: 1.42857143;
+    transform: rotate(0deg);
+    transition: all 0.7s ease-out;
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+}
