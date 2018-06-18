@@ -1,0 +1,105 @@
+.busSchedule{
+    opacity: 0;
+    transition: all 0.15s ease-out;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+}
+
+.busSchedule .tabContainer{
+    margin-top: 10px;
+    width: 100%;    
+    margin-right: auto;
+}
+
+.busSchedule .tabContainer .tab{
+    width: 45%;
+    border:none;
+    padding: 5px;
+    background: transparent; 
+    color: #6C7A89; 
+    border: 2px solid #5cb85c;
+    border-radius: 8px 0px 0px 8px;
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+
+.busSchedule .tabContainer .tab:last-child{
+    border-radius: 0px 8px 8px 0px;
+}
+
+.busSchedule .tabContainer .tab:hover{
+    background-color: #79cc8d;
+    color: white;
+}
+
+.busSchedule .tabContainer .tab.active{
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.busSchedule .stationContainer{
+    left: 5%;
+
+    width: 95%;
+    margin-left: auto;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.busSchedule .stationContainer .station{
+    margin-top:5px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.busSchedule .stationContainer .station ul{
+    width: 100%;
+    text-align: left;
+    list-style-type:none;
+    padding: 0 0;
+}
+
+.busSchedule .stationContainer .station ul li{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    word-break: break-all;
+}
+
+.busSchedule .stationContainer .station ul li:hover{
+    background-color: #6C7A89 !important;
+    color:white;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+.busSchedule .stationContainer .station ul li.letters {
+    word-wrap: break-word;
+}
+
+.busSchedule .stationContainer .station ul li:nth-child(even){
+    background-color:  #c4c6c7;
+}
+
+.busSchedule .stationContainer .station ul li i{
+    margin: auto;
+    text-align: center;
+    padding-right: 10px;
+    width: 15%;
+}
+
+.busSchedule .stationContainer .station ul li p{
+    margin: auto;
+    text-align: left;
+    width: 85%;
+}

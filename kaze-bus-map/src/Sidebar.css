@@ -6,6 +6,7 @@
 	opacity: 0.85;
     width: 300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
+    z-index: 1000;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
@@ -61,7 +62,122 @@
 .Sidebar-close .collapseButton-close .fa{
     line-height: 1.42857143;
     transform: rotate(0deg);
-    transition: all 0.7s ease-out;
-    -webkit-transition: all 0.7s ease-out;
-    -moz-transition: all 0.7s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+}
+
+.sidebarContent{
+    display: inline;
+
+}
+
+.sidebarName{
+    float: left;
+    left: 0;
+    width: 100%;
+    line-height: 1;
+    padding: 0 25px;
+}
+
+.sidebarName h1{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sidebarNavigation{
+    display: inline-flex;
+    font-size: 20px;
+    margin-bottom: 0;
+    width: 100%;
+    margin-right: auto;
+}
+
+.sidebarNavigation .backButton{
+    width: 15%;
+    padding: 0 0px;
+    margin: 0 10px;
+    background-color: transparent;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.sidebarNavigation .backButton:hover{
+    background-color: #8e8f8f;
+    color: #fafafa;
+}
+
+.sidebarNavigation .content{
+    font-weight: bold;
+    display: flex;
+    margin-right: auto;
+    width: 85%;
+    margin-bottom: 0;
+    padding: 0 5px;
+}
+
+.Sidebar .sidebarContent .busRouteListContainer{
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.15s ease-out;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+}
+
+.Sidebar .sidebarContent .busRouteList{
+    position: absolute;
+    overflow: auto;
+    left: 5%;
+    width: 95%;
+    top: 57px;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute{
+    display: flex;
+    margin-bottom: 15px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute:hover{
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    opacity: 0.7;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute:active{
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    opacity: 0.5;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute .busNumber{
+
+    height: 65px;
+    width: 70px;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute .busNumber h2{
+    line-height: 1;
+    font-weight: bold;
+    color: #fff;
+    font-size: 25px;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute .busInfo{
+    background-color: #fff;
+    height: 65px;
+    width: 200px;
+    display: flex;
+}
+
+.Sidebar .sidebarContent .busRouteList .busRoute .busInfo p{
+    margin: auto auto;
+    font-size: 18px;
+    line-height: 1;
+    width: 200px;
 }

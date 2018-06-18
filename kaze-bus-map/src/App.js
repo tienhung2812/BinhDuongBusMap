@@ -4,10 +4,13 @@ import 'react-fontawesome';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
+var lang = localStorage.getItem('lang');
+
 class App extends Component {
+  
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 };
+    this.state = { width: 0, height: 0 ,lang: lang};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
     
@@ -23,11 +26,15 @@ class App extends Component {
   updateWindowDimensions() {
   this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
+
+  handleLangChange = event => {
+    this.setState({lang: (event)});
+  }
   render() {
     return (
       <div className="App">
-        <Header width={this.state.width} height={this.state.height}/>
-        <Sidebar width={this.state.width} height={this.state.height}/>
+        <Header width={this.state.width} height={this.state.height} lang={this.handleLangChange}/>
+        <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang}/>
       </div>
     );
   }

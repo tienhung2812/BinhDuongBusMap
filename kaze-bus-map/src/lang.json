@@ -1,0 +1,111 @@
+{
+    "vi":0,
+    "en":1,
+    "jp":2,
+    "buses":[
+        "TUYẾN XE",
+        "BUSES",
+        "バス"
+    ],
+    "null":[
+        null,
+        null,
+        null
+    ],
+    "51":[
+        "51-Tuyến Xanh Biển",
+        "51-Blue Route",
+        "51-ブルールート"
+    ],
+    "52":[
+        "52-Tuyến Xanh Biển",
+        "52-Blue Route",
+        "52-ブルールート"
+    ],
+    "53":[
+        "53-Tuyến Xanh Biển",
+        "53-Blue Route",
+        "53-ブルールート"
+    ],
+    "55":[
+        "55-Tuyến Nâu",
+        "Need Update",
+        "Need Update"
+    ],
+    "39":[
+        "39-Tuyến Đỏ",
+        "Need Update",
+        "Need Update"
+    ],
+    "66":[
+        "66-Tuyến Vàng",
+        "Need Update",
+        "Need Update"
+    ],
+    "67":[
+        "67-Tuyến Xanh Lá",
+        "Need Update",
+        "Need Update"
+    ],
+    "68":[
+        "Tuyến Hồng",
+        "Need Update",
+        "Need Update"
+    ],
+    "51-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "52-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "53-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "54-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "55-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "39-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "66-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "67-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "68-busInfo":[
+        "Need Update",
+        "Need Update",
+        "Need Update"
+    ],
+    "forward":[
+        "Tuyến đi",
+        "Forward",
+        "Need Update"
+    ],
+    "backward":[
+        "Tuyến về",
+        "Backward",
+        "Need Update"
+    ]
+
+}

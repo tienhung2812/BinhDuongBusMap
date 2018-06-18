@@ -8,6 +8,7 @@
     "@fortawesome/react-fontawesome": "0.0.20",
     "bootstrap": "^4.1.1",
     "react": "^16.4.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
     "react-fontawesome": "^1.6.1",

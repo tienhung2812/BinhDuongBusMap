@@ -1,28 +1,57 @@
 import React, { Component } from 'react';
 import "./Header.css";
-import {DropdownButton, MenuItem, ButtonToolbar} from 'react-bootstrap';
 import logo from './logo.png';
 
-
-const buttonsInstance = (
-<ButtonToolbar>
-    <DropdownButton
-        bsStyle={"default"}
-        title={<i class="fa fa-bars"></i>}
-        noCaret
-        id="dropdown-no-caret"
-    >
-        <MenuItem eventKey="1">About</MenuItem>
-    </DropdownButton>
-</ButtonToolbar>
-);
+var storageLang = localStorage.getItem('lang');
 
 class Header extends Component {
 
+    state = {
+        options: [
+          {
+            name: 'Tiếng Việt',
+            value: "vi",
+          },
+          {
+            name: 'English',
+            value: 'en',
+          },
+          {
+            name: '日本語',
+            value: 'jp',
+          }
+        ],
+        value: null,
+        firstStart: true
+      };
+    
 
+    handleChange = (event) => {
+        this.setState({ value: event.target.value });
+        this.props.lang(event.target.value)
+        localStorage.setItem('lang',event.target.value);     
+    };
+
+    
     render() {
         let logoName;
-
+        const { options, value, firstStart } = this.state;
+        if(firstStart){
+            if(storageLang!==value){
+                this.setState({value: storageLang})
+            }  
+            this.setState({firstStart:false})
+        }
+        const buttonsInstance = (
+            <select onChange={this.handleChange} value={value}>
+                {options.map(item => (
+                <option key={item.value} value={item.value}>
+                    {item.name}
+                </option>
+                ))}
+            </select> 
+        );
+        
         if(this.props.width>"390"){
             logoName = <div className="logoName">
                         <h1>KAZE</h1>

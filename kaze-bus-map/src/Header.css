@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 header{
     font-family: 'Roboto', sans-serif;
     position: absolute;
-    background-color: #d8f2f8;
+    background-color: #143e57;
     top:0;
     height: 80px; 
     width: 100%;
-  
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
 .logo{
@@ -32,13 +31,14 @@ header{
 
 .logo .logoContent .logoName h1{
     padding-right: 10px;
-    font-size: 32px;
+    font-size: 30px;
     font-family: 'Roboto', sans-serif !important;
     font-weight: bold;
+    color: white;
 }
 
 .logo .logoContent .logoName h1:last-child{
-    color:rgb(33,124,144);
+    color:rgb(209, 238, 245);
 }
 
 .logo a:hover{
