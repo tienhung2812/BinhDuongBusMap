@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import lang from './lang.json';
 import "./BusSchedule.css";
-import preloader from "./preloading.gif"
 
 class StationList extends Component{
     constructor(props){
@@ -13,14 +12,6 @@ class StationList extends Component{
         this.props.stationClick(event.currentTarget.dataset.id);
     }
 
-    // checkTimeout(){
-    //     if(!this.state.checkTimeout){
-    //         this.setState({checkTimeout:true});
-    //         setTimeout(function() { 
-    //             this.setState({fade:0});
-    //         }.bind(this), 5000);
-    //     }
-    // }
 
     render(){
         let style={
@@ -29,10 +20,6 @@ class StationList extends Component{
         let styleStation={
             height:(this.props.height-142-10)
         }
-        let styleError={
-            height:(this.props.height-142-20)/3
-        }
-
         let stationArray=[]
         let preload=null
         if(this.props.data!=null)
@@ -43,7 +30,8 @@ class StationList extends Component{
                 stationArray.push(<li onClick={this.handleChange.bind(this)} data-id={i}><i className="far fa-circle"></i><p>{this.props.data.station[i].stop_name}</p></li>);
             }
         else
-            preload=<img src={preloader} alt="preloader" className="preload"/>
+            preload=<div className="preload spinner"></div>
+            // preload=<img src={this.props.preloader} alt="preloader" className="preload"/>
         if(this.props.display===2){
             return (<div className="stationContainer" style={style}>
                         <div className="station" style={styleStation}>
@@ -199,7 +187,7 @@ class BusSchedule extends Component{
                             <button className={forwardClass} onClick={this.forwardClick}>{lang.forward[this.props.langCode]}</button>
                             <button className={backwardClass} onClick={this.backwardClick}>{lang.backward[this.props.langCode]}</button>
                         </div>
-                        <StationList display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} stationClick={this.handleStation} data={this.state.data}/>
+                        <StationList display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} stationClick={this.handleStation} data={this.state.data} preloader={this.props.preloader}/>
                         <Schedule display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} station={this.state.station} data={this.state.data}/>
                     </div>);
         }

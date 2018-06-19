@@ -4,6 +4,7 @@ import 'react-fontawesome';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Map from './Map';
+import preloader from "./preloading.gif"
 
 var lang = localStorage.getItem('lang');
 
@@ -44,7 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header width={this.state.width} height={this.state.height} lang={this.handleLangChange}/>
-        <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang} closeSidebar={this.handleCloseSidebar}/>
+        <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang} closeSidebar={this.handleCloseSidebar} preloader={preloader}/>
         <Map width={this.state.width} height={this.state.height} lang={this.state.lang} displaySidebar={this.state.displaySidebar}/>
       </div>
     );
