@@ -73,7 +73,6 @@
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
-    word-break: break-all;
 }
 
 .busSchedule .stationContainer .station ul li:hover{
