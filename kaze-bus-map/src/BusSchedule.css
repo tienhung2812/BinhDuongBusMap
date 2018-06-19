@@ -170,4 +170,20 @@
     font-size: 20px;
 }
 
+.preload{
+    height: auto;
+    margin: auto;
+    width:50%;
+}
+
+.error{
+    margin: 0 auto;
+    padding: 50px 0;
+    font-size: 30px;
+    text-align: center;
+}
+.error h2{
+    margin: 0;
+
+}
 
