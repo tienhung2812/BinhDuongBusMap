@@ -2,4 +2,7 @@
     position: absolute;
     top:80px;
     left:300px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }

@@ -57,10 +57,12 @@ class Sidebar extends Component {
     // 1=in and 2=out;
     collapseSidebar(){
         this.setState({display:false});
+        this.props.closeSidebar(true);
     }
 
     uncollapseSidebar(){
         this.setState({display:true});
+        this.props.closeSidebar(false);
     }
 
     handleBackButton = event => {

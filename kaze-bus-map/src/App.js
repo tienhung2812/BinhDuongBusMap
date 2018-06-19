@@ -11,7 +11,7 @@ class App extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { width: 0, height: 0 ,lang: lang};
+    this.state = { width: 0, height: 0 ,lang: lang, displaySidebar:true};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
     
@@ -31,12 +31,21 @@ class App extends Component {
   handleLangChange = event => {
     this.setState({lang: (event)});
   }
+
+  handleCloseSidebar = event =>{
+    if(event){
+      this.setState({displaySidebar:false})
+    }
+    else
+      this.setState({displaySidebar:true})
+  }
+
   render() {
     return (
       <div className="App">
         <Header width={this.state.width} height={this.state.height} lang={this.handleLangChange}/>
-        <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang}/>
-        <Map width={this.state.width} height={this.state.height} lang={this.state.lang}/>
+        <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang} closeSidebar={this.handleCloseSidebar}/>
+        <Map width={this.state.width} height={this.state.height} lang={this.state.lang} displaySidebar={this.state.displaySidebar}/>
       </div>
     );
   }

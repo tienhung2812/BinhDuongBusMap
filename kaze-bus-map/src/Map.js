@@ -14,11 +14,23 @@ class Map extends Component{
       };
     
     render(){
-        let style = {
-            height: (this.props.height-80),
-            width: (this.props.width-300)
+      let style=null;
+      if(this.props.displaySidebar){
+        style = {
+          height: (this.props.height-80),
+          width: (this.props.width-300),
+          left: (300)
         }
-        return (<div className="Map" style={style}>
+      }
+      else{
+        style = {
+          height: (this.props.height-80),
+          width: (this.props.width),
+          left: 0
+        }
+      }
+        
+      return (<div className="Map" style={style}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyCqcvS0_drAFXZkKPjIqMxFe2E3IOYnE90" }}
           defaultCenter={this.props.center}
