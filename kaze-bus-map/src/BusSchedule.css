@@ -103,3 +103,71 @@
     text-align: left;
     width: 85%;
 }
+
+.Schedule .stationName{
+    background-color: #FBC02D;
+    border-radius: 10px;
+    padding: 3px 5px;
+    margin: 5px 15px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+/* .Schedule .stationName:hover{
+    background-color: rgb(185, 142, 32);
+    color:white;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+} */
+
+.Schedule .stationName h1{
+    padding: 0 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    width: 100%;
+}
+
+.Schedule .timeTable{
+    overflow: auto;
+}
+
+.Schedule .timeTable ul{
+    list-style-type:none;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.Schedule .timeTable ul li{
+    padding: 10px;
+    margin: 3px 0px;
+    margin-left: 20px;
+    display: flex;
+    width: 90%;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    border-radius:10px;
+}
+
+.Schedule .timeTable ul li:hover{
+    background-color: #747474;
+    color:white;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+.Schedule .timeTable ul li:active, .Schedule .timeTable ul li:focus{
+    background-color: #3b3b3b;
+}
+
+.Schedule .timeTable ul li p{
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+

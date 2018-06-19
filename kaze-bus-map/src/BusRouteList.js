@@ -17,7 +17,7 @@ class BusRouteList extends Component{
 
     render(){ 
         let fadestyle=null;
-        if(this.props.fade!=0){
+        if(this.props.fade!==0){
             fadestyle={
                 opacity:0
             }

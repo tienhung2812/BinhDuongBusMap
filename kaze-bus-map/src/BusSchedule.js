@@ -22,7 +22,7 @@ class StationList extends Component{
             stationArray.push(<li onClick={this.handleChange.bind(this)} data-id={i}><i className="far fa-circle"></i><p>ffffffffffffffffffffffffffffffffffffffffffffff</p></li>);
         }
 
-        if(this.props.display==2){
+        if(this.props.display===2){
             return (<div className="stationContainer" style={style}>
                         <div className="station" style={styleStation}>
                             <ul>
@@ -37,10 +37,53 @@ class StationList extends Component{
     }
 }
 
-class Schedule extends Component{
+class StationName extends Component{
+    stationNameHeight=0
+    calcHeight(node) {
+        if(node!=null)
+            if(this.stationNameHeight!==node.clientHeight){
+                this.stationNameHeight=node.clientHeight;
+                this.props.height(node);
+            }
+
+    }
     render(){
-        if(this.props.display==3){
-            return (<p>a</p>);
+        return <div className="stationName" ref={(node) => this.calcHeight(node)} >
+                    <h1>{this.props.name}</h1>
+                </div>;
+    }
+}
+
+class Schedule extends Component{
+    constructor(props){
+        super(props);
+        this.state={stationNameHeight:0}
+    }
+    handleChange = event =>{
+        this.setState({stationNameHeight:event.clientHeight})
+    }
+
+    render(){
+        if(this.props.display===3){
+            let timeArray=[];
+            for (var i=0;i<100;i++){
+                timeArray.push(<li><p>fffff</p></li>);
+            }
+            let timetablestyle={
+                height:(this.props.height-150-this.state.stationNameHeight)
+            }
+            return (<div className="Schedule">
+                        <StationName height={this.handleChange} name={"Station name 1"}/>
+                        <div className="timeTable" style={timetablestyle}>
+                            <ul>
+                            {timeArray}
+                            </ul>
+                        </div>
+                    </div>
+            );
+            
+
+            
         }
         else{
             return null;
@@ -54,7 +97,7 @@ class BusSchedule extends Component{
         super(props);
         this.forwardClick = this.forwardClick.bind(this);
         this.backwardClick = this.backwardClick.bind(this);
-        this.state={display:"station", station:null, direction:"forward"}
+        this.state={station:null, direction:"forward"}
     }
     lang = lang;
     
@@ -72,7 +115,7 @@ class BusSchedule extends Component{
 
     render(){ 
         let fadestyle=null;
-        if(this.props.fade!=0){
+        if(this.props.fade!==0){
             fadestyle={
                 opacity:0
             }

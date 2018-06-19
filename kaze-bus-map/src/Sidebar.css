@@ -177,7 +177,8 @@
 
 .Sidebar .sidebarContent .busRouteList .busRoute .busInfo p{
     margin: auto auto;
-    font-size: 18px;
+    padding: 5px 10px;
+    font-size: 17px;
     line-height: 1;
     width: 200px;
 }

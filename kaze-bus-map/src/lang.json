@@ -29,83 +29,78 @@
     ],
     "55":[
         "55-Tuyến Nâu",
-        "Need Update",
-        "Need Update"
+        "55-Brown Route",
+        "55-ブラウンルート"
     ],
     "39":[
         "39-Tuyến Đỏ",
-        "Need Update",
-        "Need Update"
+        "39-Red Route",
+        "39-レッドルート"
     ],
     "66":[
         "66-Tuyến Vàng",
-        "Need Update",
-        "Need Update"
+        "66-Yellow Route",
+        "66-イエロールート"
     ],
     "67":[
         "67-Tuyến Xanh Lá",
-        "Need Update",
-        "Need Update"
+        "67-Green Route",
+        "67-グリーンルート"
     ],
     "68":[
-        "Tuyến Hồng",
-        "Need Update",
-        "Need Update"
+        "68-Tuyến Hồng",
+        "68-Pink Route",
+        "68-ピンクのルート"
     ],
     "51-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Tòa nhà Becamex - Đại học Quốc Tế Miền Đông",
+        "Becamex Building - Eastern International University",
+        "Becamexビルディング - 東部国際大学"
     ],
     "52-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Tòa nhà Becamex - hikari",
+        "Becamex Building - hikari",
+        "Becamexビルディング - 光"
     ],
     "53-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
-    ],
-    "54-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Tòa nhà Becamex - Trường Ngô Thời Nhiệm",
+        "Becamex Building - Ngo Thoi Nhiem School",
+        "Becamexビルディング - Ngo Thoi Nhiem学校"
     ],
     "55-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Tòa nhà Becamex - Đại học Quốc Tế Miền Đông",
+        "Becamex Building - Eastern International University",
+        "Becamexビルディング - 東部国際大学"
     ],
     "39-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Tòa nhà Becamex - HVL - hikari - VSIP2",
+        "Becamex Building - HVL - hikari - VSIP2",
+        "Becamexビルディング - HVL - 光 - VSIP2"
     ],
     "66-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "Đại học Quốc Tế Miền Đông - SORA gardens - hikari",
+        "Becamex Building - SORA gardens - hikari",
+        "Becamexビルディング - ソラ庭園 - 光"
     ],
     "67-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "hikari - Chợ Phú Chánh",
+        "hikari - Phu Chanh market",
+        "光 - PHU CHANH市場"
     ],
     "68-busInfo":[
-        "Need Update",
-        "Need Update",
-        "Need Update"
+        "hikari - Khu nhà ở an sinh xã hội Hòa Lợi - VSIP2",
+        "hikari - Hoa Loi social security housing area- VSIP2",
+        "光 - 社会住宅地Hoa Loi- VSIP2"
     ],
     "forward":[
         "Tuyến đi",
         "Forward",
-        "Need Update"
+        "前方ルート"
     ],
     "backward":[
         "Tuyến về",
         "Backward",
-        "Need Update"
+        "ルートを返す"
     ]
 
 }

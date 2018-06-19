@@ -3,6 +3,7 @@ import './App.css';
 import 'react-fontawesome';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Map from './Map';
 
 var lang = localStorage.getItem('lang');
 
@@ -35,6 +36,7 @@ class App extends Component {
       <div className="App">
         <Header width={this.state.width} height={this.state.height} lang={this.handleLangChange}/>
         <Sidebar width={this.state.width} height={this.state.height} lang={this.state.lang}/>
+        <Map width={this.state.width} height={this.state.height} lang={this.state.lang}/>
       </div>
     );
   }
