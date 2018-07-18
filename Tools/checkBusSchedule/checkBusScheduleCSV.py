@@ -3,6 +3,8 @@
 
 import sys
 import json
+import time
+import logging
 ###DEFINE
 
 #Ngay le:
@@ -19,9 +21,15 @@ import json
 #  2018-02-14 
 #  2018-09-02 
 
+#Log Config
+logging.basicConfig(filename='checkBusSchelue.log',level=logging.DEBUG)
+
+#Progress bar
+toolbar_width = 30
+
 delimiter = ","
 routes = []
-
+analyze_content_log = ''
 #Col def
 #Content
 croute_id = 0
@@ -31,6 +39,11 @@ cday = [3,4,5,6,7,8,9]
 cdate = 10
 cservice_id = 11
 crow = 12
+
+#ContentData
+cdata = []
+#SampleData
+sdata=None
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -99,7 +112,7 @@ def isNewRoute(route_id):
             break
     if newRoute:
         routes.append(route_id)
-        print 'Add route '+bcolors.WARNING + bcolors.BOLD + route_id + bcolors.ENDC
+        logging.info('Add route '+bcolors.WARNING + bcolors.BOLD + route_id + bcolors.ENDC)
         return True
     else:
         return False
@@ -112,17 +125,89 @@ def checkServiceID(input,service_id):
             return False
     return True
 
+def AnalyzeContent(data):
+    for route in cdata:
+        #Search route
+        if(data[croute_id]==route.route_id):
+            #Search new stop name
+            isNewStopName = True
+            for stop in route.stops:
+                if (data[cstop_name]==stop.name):
+                    isNewStopName = False
+                    break
+            #If yes, add new Stop object to Route
+            if isNewStopName:
+                route.stops.append(Stop(data[cstop_name]))
+                
+            #Search Stop name
+            for stop in route.stops:
+                if (data[cstop_name]==stop.name):
+                    #Search for new time
+                    isNewTime = True
+                    for stopTime in stop.arrival_time:
+                        if (data[carrival_time]==stopTime.time):
+                            isNewTime = False
+                            break
+                    if isNewTime:
+                        stop.arrival_time.append(StopTime(data[carrival_time],data[cservice_id]))
+                    
+                    #Search time
+                    for stopTime in stop.arrival_time:
+                        if (data[carrival_time]==stopTime.time):
+                            #Search for new date off
+                            isNewDateOff = True
+                            for date in stopTime.dateOff:
+                                if(data[cdate]==date):
+                                    isNewDateOff = False
+                            if isNewDateOff:
+                                stopTime.dateOff.append(data[cdate])
+
 class Route:
     route_id=0
     stops = []
-    service_id = 0
-    dateOff = []
 
-    def __init__(self,id,serviceit)
+    def __init__(self,id,service):
+        self.route_id =id
+        self.service_id = service
+        self.stops = []
+        self.dateOff=[]
 
 class Stop:
-    stop_name = ''
+    name = ''
     arrival_time = []   
+    def __init__(self,stop_name):
+        self.name = stop_name
+        self.arrival_time = []
+
+class StopTime:
+    time = ''
+    dateOff = []
+    service_id = 0
+    def __init__(self,atime,servicetype):
+        self.time = atime
+        self.dateOff = []
+        self.service_id = servicetype
+
+def printData(data):
+    #Printr Route name
+    print "-------------------------------------"
+    print "Route:" + bcolors.WARNING+ data.route_id + bcolors.ENDC
+    print "Stops:",
+    for stop in data.stops:
+        #Print stop name
+        print "\t"+bcolors.BOLD + stop.name + bcolors.ENDC
+        #Print time
+        for stopTime in stop.arrival_time:
+            print "\t\t"+bcolors.OKGREEN+stopTime.time+bcolors.ENDC,
+            #Print Service type
+            print "\t"+stopTime.service_id,
+            #Print date off
+            print "\t"+ str(len(stopTime.dateOff)) + " days\t"
+            # for date in stopTime.dateOff:
+            #     print "\t\t\t\t\t"+date
+
+
+
 #MAIN
 if(len(sys.argv)!=2):
     print ("Error input")
@@ -135,17 +220,38 @@ else:
 
     
     #Analyze content
+    totalLength = len(content)-2
     #Bat dau tu 2 vi row 2 laf row bat dau
+    print bcolors.BOLD + "Analyzing input: "+bcolors.ENDC
+
+    sys.stdout.write("[")
     for i in range(2,len(content)-1):
         #Them stt cua row vao cuoi content
-        content[i] = content[i]+","+str(i+1
-        )
+        content[i] = content[i]+","+str(i+1)
+        
         #Chia col cuar tung row thanh array
         data=content[i].split(delimiter)
         dataDayOff = []
         for daysInWeek in cday:
             dataDayOff.append(data[daysInWeek])
         #Check new Route and check service ID
-        if(isNewRoute(data[croute_id]) or not checkServiceID(dataDayOff,data[cservice_id])):
-            print 'Row '+str(i+1)
-    print routes
+        if(isNewRoute(data[croute_id])):
+            newRoute = None
+            newRoute = Route(data[croute_id],data[cservice_id])
+            cdata.append(newRoute)
+        if (not checkServiceID(dataDayOff,data[cservice_id])):
+            analyze_content_log+='\n' +bcolors.FAIL + 'Wrong service_ID:' + bcolors.ENDC + 'at row '+str(i+1)
+        AnalyzeContent(data)
+        if((i%(len(content)-3)/toolbar_width)==0):
+            sys.stdout.write("-")
+    sys.stdout.write("]\n")
+    
+
+    #Print cdata
+    print "Data"
+    for data in cdata:
+        printData(data)
+    print analyze_content_log
+        
+
+    

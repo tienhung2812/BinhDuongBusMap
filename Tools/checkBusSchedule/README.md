@@ -44,10 +44,21 @@ Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/Gen
         * `input`: Array of day, length must == 7
         * `service_id`: service_id code
     * Kiểm tra các ngày nghỉ có đúng với serviceID không
+
+* ### Print Data `printData(data)`
+    * Parameter:
+        * `data`: Array of data from `cdata`
+    * In dữ liệu của `cdata`
+
+* ### Analyze Content `AnalyzeContent(data)`
+    * Parameter
+        * `data`: Array of data from `content`
+    * Chia dữ liệu theo row vào biến `cdata` để chuẩn bị so sánh
 ## Test steps
 ### **Step 1**: Analyze `input file`
 #### Object schema  
 >Route ID
     --> Stop Name
         --> Time 
-            --> Service type
+            --> Service type, Date Off
+Phân tích dữ liệu các tuyến vô `cdata` theo Schema ở trên
