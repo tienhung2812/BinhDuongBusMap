@@ -11,7 +11,7 @@
 Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/General_timetable.xlsx)
 * `route_id` _ ` (another route_id) `-`direction`  
   
-## Definition from `out.csv`
+## Definition from [`out.csv`](out.csv)
 * Route ID: `route_id`
 * Stop name: `stop_name`
 * Running day:  `monday` to `sunday` 
@@ -24,5 +24,19 @@ Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/Gen
     * > `4` là chạy mỗi t7, cn
     * > `5` là chỉ chạy t7
 
+## Function
+* ### Open Sample `openSample(route_id,direction)`
+    * Parameter:
+        * `route_id` : Mã sỗ xe
+        * `direction` : Chiều 
+    *  Lấy dữ liệu của sample tùy thuộc vào các route khác nhau
+* ### Translate Service `translateService(service_id)`
+    * Parameters:
+        * `service_id` : service id, col cuối trong out.csv
+    * Đổi từ service_id sang danh sách các ngày hoạt động trong tuần 
+
 ## Test steps
-### Step 1. Analyze `input file`
+### **Step 1**: Analyze `input file`
+#### Object schema  
+>Route ID
+    -->
