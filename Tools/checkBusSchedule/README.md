@@ -4,11 +4,11 @@
 
 ## File description
 ### Source Code
-[` checkBusScheduleCSV.py`]( ./Tools/checkBusSchedule/checkBusScheduleCSV.py )  
+[` checkBusScheduleCSV.py`](checkBusScheduleCSV.py)  
   
-### Folder [**sample**](./Tools/checkBusSchedule/)  
+### Folder [**sample**](./sample)  
   
-Keeping sample to compare, copy from [General_timetable.xlsx](./Document/General_timetable.xlsx)
+Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/General_timetable.xlsx)
 * `route_id` _ ` (another route_id) `-`direction`  
   
 ## Definition from `out.csv`
