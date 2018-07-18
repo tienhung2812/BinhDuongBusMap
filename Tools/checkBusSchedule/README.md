@@ -34,9 +34,20 @@ Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/Gen
     * Parameters:
         * `service_id` : service id, col cuối trong out.csv
     * Đổi từ service_id sang danh sách các ngày hoạt động trong tuần 
+* ### Is New Route `isNewRoute(route_id)`
+    * Parameter:
+        * `route_id`: Ma so xe
+    * Lập một danh sách các tuyến hiện có trong `input file`
 
+* ### Check Service ID `checkServiceID(input,service_id)`
+    * Parameters:
+        * `input`: Array of day, length must == 7
+        * `service_id`: service_id code
+    * Kiểm tra các ngày nghỉ có đúng với serviceID không
 ## Test steps
 ### **Step 1**: Analyze `input file`
 #### Object schema  
 >Route ID
-    -->
+    --> Stop Name
+        --> Time 
+            --> Service type
