@@ -4,11 +4,11 @@
 
 ## File description
 ### Source Code
-` checkBusScheduleCSV.py`  
+[` checkBusScheduleCSV.py`]( ./BinhDuongBusMap/Tools/checkBusSchedule/checkBusScheduleCSV.py )  
   
 ### Folder **sample**  
   
-Keeping sample to compare, copy from ` General_timetable.xlsx ` in folder **BinhDuongBusMap/Document**  
+Keeping sample to compare, copy from [General_timetable.xlsx](https://github.com/tienhung2812/BinhDuongBusMap/blob/master/Document/General_timetable.xlsx)
 * `route_id` _ ` (another route_id) `-`direction`  
   
 ## Definition from `out.csv`
@@ -23,3 +23,6 @@ Keeping sample to compare, copy from ` General_timetable.xlsx ` in folder **Binh
     * > `3` là chạy từ t2->t6
     * > `4` là chạy mỗi t7, cn
     * > `5` là chỉ chạy t7
+
+## Test steps
+### Step 1. Analyze `input file`
