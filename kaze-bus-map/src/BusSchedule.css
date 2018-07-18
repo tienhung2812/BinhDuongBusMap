@@ -130,6 +130,7 @@
 
 .Schedule .timeTable{
     overflow: auto;
+    margin-top: 15px;
 }
 
 .Schedule .timeTable ul{
@@ -139,7 +140,7 @@
     width: 100%;
 }
 
-.Schedule .timeTable ul li{
+.Schedule .timeTable ul li .timeHeader{
     padding: 10px;
     margin: 3px 0px;
     margin-left: 20px;
@@ -151,7 +152,7 @@
     border-radius:10px;
 }
 
-.Schedule .timeTable ul li:hover{
+.Schedule .timeTable ul li .timeHeader:hover{
     background-color: #747474;
     color:white;
     transition: all 0.2s ease-out;
@@ -159,18 +160,44 @@
     -moz-transition: all 0.2s ease-out;
 }
 
-.Schedule .timeTable ul li:active, .Schedule .timeTable ul li:focus{
+.Schedule .timeTable ul li .timeHeader:active, .Schedule .timeTable ul li .timeHeader:focus, .Schedule .timeTable ul li .timeHeader.active{
     background-color: #3b3b3b;
+    color:white;
 }
 
-.Schedule .timeTable ul li p{
+.Schedule .timeTable ul li .timeHeader p{
     margin: auto;
     text-align: center;
     font-size: 20px;
 }
 
+
+.Schedule .timeTable ul li .timeContent{
+    color: #000;
+    opacity: 0;
+    margin: auto;
+    margin-left: 30px;
+    width: 85%;
+    padding: 0 10px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+}
+
+.Schedule .timeTable ul li .timeContent p{
+    margin-bottom: 0;
+}
+
+.Schedule .timeTable ul li .timeContent hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #3b3b3b;
+    padding: 0; 
+}
+
 .preload{
-    height: auto;
+    height: 100%;
     margin: auto;
 }
 
@@ -186,24 +213,25 @@
 }
 
 
-
 @keyframes spinner {
     to {transform: rotate(360deg);}
   }
    
-  .spinner:before {
-    content: '';
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
-    margin-left: -15px;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-    border-top-color: #46C694;
-    animation: spinner .6s linear infinite;
-  }
+.spinner:before {
+content: '';
+box-sizing: border-box;
+position: absolute;
+top: 50%;
+left: 50%;
+width: 40px;
+height: 40px;
+margin-top: -15px;
+margin-left: -15px;
+border-radius: 50%;
+border: 2px solid #ccc;
+border-top-color: #46C694;
+animation: spinner .6s linear infinite;
+}
+
+
 

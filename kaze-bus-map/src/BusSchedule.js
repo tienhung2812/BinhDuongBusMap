@@ -2,12 +2,44 @@ import React, { Component } from 'react';
 import lang from './lang.json';
 import "./BusSchedule.css";
 
+
+class TimeContent extends Component{
+    constructor(props){
+        super(props);
+        this.state={fade:2,processDone:true}
+    }
+    componentDidMount(){
+        setTimeout(function() { 
+            this.setState({fade:0})
+        }.bind(this), 300); 
+    }
+    render(){
+        let style;
+        if(this.state.fade===2){
+            style={
+                opacity:0,
+                height:"0%"
+            }
+        }
+        else{
+            style={
+                opacity:1,
+                height:"100%"
+            }
+        }
+        return <div className="timeContent" style={style}>
+                    
+                    <hr/><p>This is time content very long very long very long very long very long very long very long very long very long very long </p><hr/>
+                </div>;
+    }
+}
+
 class StationList extends Component{
     constructor(props){
         super(props);
         this.state={checkTimeout:false}
     }
-
+    lang = lang;
     handleChange= event=>{
         this.props.stationClick(event.currentTarget.dataset.id);
     }
@@ -68,10 +100,17 @@ class StationName extends Component{
 class Schedule extends Component{
     constructor(props){
         super(props);
-        this.state={stationNameHeight:0}
+        this.state={stationNameHeight:0, timeIndex:null}
     }
     handleChange = event =>{
         this.setState({stationNameHeight:event.clientHeight})
+    }
+
+    handleTimeClick = event=>{
+        if(this.state.timeIndex!==event.currentTarget.dataset.id)
+            this.setState({timeIndex:(event.currentTarget.dataset.id)})
+        else
+        this.setState({timeIndex:null})
     }
 
     render(){
@@ -82,12 +121,15 @@ class Schedule extends Component{
                 stationName = this.props.data.station[this.props.station].stop_name;
                 for (var i=0;i<this.props.data.station[this.props.station].time.length;i++){
                     let timeraw = this.props.data.station[this.props.station].time[i].stop_time;
-                    timeArray.push(<li><p>{timeraw.substring(0, timeraw.length - 3)}</p></li>);
+                    if(i==this.state.timeIndex)
+                        timeArray.push(<li><div className="timeHeader active" onClick={this.handleTimeClick} data-id={i}><p>{timeraw.substring(0, timeraw.length - 3)}</p></div><TimeContent data={this.props.data} route={this.props.route} station={this.props.station}/></li>);
+                    else
+                        timeArray.push(<li><div className="timeHeader" onClick={this.handleTimeClick} data-id={i}><p>{timeraw.substring(0, timeraw.length - 3)}</p></div></li>);
                 }
             }
             
             let timetablestyle={
-                height:(this.props.height-150-this.state.stationNameHeight)
+                height:(this.props.height-160-this.state.stationNameHeight)
             }
             return (<div className="Schedule">
                         <StationName height={this.handleChange} name={stationName}/>
@@ -108,7 +150,6 @@ class Schedule extends Component{
         
     }
 }
-var err;
 class BusSchedule extends Component{
     constructor(props){
         super(props);
@@ -119,14 +160,37 @@ class BusSchedule extends Component{
         this.state={station:null, direction:"forward",route:null,data:null}
     }
     lang = lang;
-    err = err;
     forwardClick(){
-        this.setState({direction:"forward"});
-        this.updateData(this.props.route,"forward");
+        if(this.state.direction!=="forward"){
+            this.setState({direction:"forward"});
+            if(this.state.station!=null){
+                let reverseStation = this.state.data.station.length-Number(this.state.station)-1;
+                console.log("Current station: "+this.state.station
+                    +"\nTotal station: "+this.state.data.station.length
+                    +"\nNew station: "+reverseStation
+                )
+                this.setState({station:reverseStation});
+            }
+            this.updateData(this.props.route,"forward");
+        }else{
+            console.log("Already in forward section");
+        }
     }
     backwardClick(){
-        this.setState({direction:"backward"});
-        this.updateData(this.props.route,"backward");
+        if(this.state.direction!=="backward"){
+            this.setState({direction:"backward"});
+            if(this.state.station!=null){
+                let reverseStation = this.state.data.station.length-Number(this.state.station)-1;
+                console.log("Current station: "+this.state.station
+                    +"\nTotal station: "+this.state.data.station.length
+                    +"\nNew station: "+reverseStation
+                )
+                this.setState({station:reverseStation});
+            }
+            this.updateData(this.props.route,"backward");
+        }else{
+            console.log("Already in backward section");
+        }
     }
 
     handleStation = event =>{
@@ -145,7 +209,6 @@ class BusSchedule extends Component{
 
     updateData(route,direction){
         this.setState({data:null});
-        err = false;
         let url = 'https://raw.githubusercontent.com/tienhung2812/BinhDuongBusMap/master/TimeScheduleData/'+route+'-'+direction+'.json'
         fetch(url).then((result) => {
             if(result.ok)
@@ -187,7 +250,7 @@ class BusSchedule extends Component{
                             <button className={forwardClass} onClick={this.forwardClick}>{lang.forward[this.props.langCode]}</button>
                             <button className={backwardClass} onClick={this.backwardClick}>{lang.backward[this.props.langCode]}</button>
                         </div>
-                        <StationList display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} stationClick={this.handleStation} data={this.state.data} preloader={this.props.preloader}/>
+                        <StationList display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} stationClick={this.handleStation} data={this.state.data} preloader={this.props.preloader} langCode={this.props.langCode}/>
                         <Schedule display={this.props.state} direction={this.state.direction} route={this.props.route} height={this.props.height} station={this.state.station} data={this.state.data}/>
                     </div>);
         }
