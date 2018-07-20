@@ -1,6 +1,7 @@
 # Check Bus schedule doc
 ### Run command
-` checkBusScheduleCSV.py **your file** `
+` checkBusScheduleCSV.py **your file** **direction**`
+`direction`: 0 for forward, 1 for backward
 
 ## File description
 ### Source Code
@@ -54,11 +55,25 @@ Keeping sample to compare, copy from [General_timetable.xlsx](../../Document/Gen
     * Parameter
         * `data`: Array of data from `content`
     * Chia dữ liệu theo row vào biến `cdata` để chuẩn bị so sánh
+
+* ### Analyze Sample `AnalyzeSample(data,route_id,direction)`
+    * Parameter
+        * `data`: Array of data from `sampleContent`
+        * `route_id`: route ID
+        * `direction`: Direction
+    * Chia dữ liệu theo row vào biến `sdata` để chuẩn bị so sánh
 ## Test steps
 ### **Step 1**: Analyze `input file`
 #### Object schema  
 >Route ID
     --> Stop Name
         --> Time 
-            --> Service type, Date Off
+            --> Service type, Date Off  
+
 Phân tích dữ liệu các tuyến vô `cdata` theo Schema ở trên
+
+### **Step 2** Compare 
+* Get direction from `command`
+* Check per route
+    * Get sample of that route
+    * Analyze sample
