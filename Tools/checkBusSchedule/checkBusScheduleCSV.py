@@ -25,7 +25,7 @@ from datetime import datetime
 #Setting
 printData = False
 printSample = False
-printNumDateOffError= False
+printNumDateOffError= True
 printServiceIDError = True
 defaultDateOff = ["2018-01-01","2018-05-01","2018-04-30","2018-04-25","2019-02-20","2018-02-19","2018-02-18","2018-02-17","2018-02-16","2018-02-15","2018-02-14","2018-09-02"]
 #Log Config
@@ -314,6 +314,51 @@ def AnalyzeSample(data,route_id,direction):
                     #Add day off
                     sample.stops[-1].arrival_time[-1].dateOff = defaultDateOff
                 index+=1
+    else:
+        #For route 51 52 53
+        #Start at row 4
+        firstTime = 0
+        #Get firstTime
+        raw = data[3].split(delimiter)
+        for i in range(1,len(raw)):
+            if len(raw[i])>0:
+                firstTime=i
+                break
+        
+        colData = []
+        #Get col number have route data
+        rawRouteData = data.pop(0).split(delimiter)
+        for i in range(firstTime,len(rawRouteData)):
+            if(rawRouteData[i]==route_id):
+                colData.append(i)
+        
+        #Search time in colData
+        #Get service type in colData
+        rawServiceTypeData = []
+        #Fix with quote
+        haveQuote = False
+        waitContent=''
+        i = 0
+        for line in data.pop(0).split(delimiter):
+            if i>=firstTime:
+                if '"' in line and not haveQuote:
+                    waitContent += line
+                    haveQuote = True
+                elif not '"' in line and haveQuote:
+                    waitContent += line
+                elif '"' in line and haveQuote:
+                    waitContent+=line
+                    rawServiceTypeData.append(str(waitContent))
+                    haveQuote = False
+                    waitContent=''
+                else :
+                    rawServiceTypeData.append(str(line))
+            i+=1
+        #Get service type
+        service_type_data= []
+        for i in colData:
+            service_type_data.append(rawServiceTypeData[i-firstTime])
+        print service_type_data
     return sample
 
 def CompareRouteID(data,sample):
