@@ -3,6 +3,15 @@
 ` checkBusScheduleCSV.py **your file** **direction**`
 `direction`: 0 for forward, 1 for backward
 
+## Error code
+* **RouteID**: route ID bị sai
+* **NumStop**: số lượng Stop bị sai
+* **StopOrder**: Thứ tự của các Stop bị sai
+* **NumTime**: Số lượng thời gian trong các stop bị sai
+* **TimeOrder**: Thứ tự thơi gian trong các stop bị sai
+* **NumDateOff**: Số lượng ngày nghỉ bị sai
+* **ServiceID**: Service type bị sai
+
 ## File description
 ### Source Code
 [` checkBusScheduleCSV.py`](checkBusScheduleCSV.py)  
