@@ -782,7 +782,7 @@ else:
     print bcolors.BOLD + "Analyzing input: "+bcolors.ENDC
     contentData = []
     sys.stdout.write("[")
-    for i in range(2,len(content)-1):
+    for i in range(1,len(content)-1):
         #Them stt cua row vao cuoi content
         content[i] = content[i]+","+str(i+1)
         
