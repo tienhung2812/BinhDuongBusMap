@@ -23,7 +23,7 @@ from datetime import datetime
 #  2018-09-02 
 
 #Setting
-printData = False
+printContent = False
 printSample = False
 printNumDateOffError= True
 printServiceIDError = True
@@ -172,6 +172,8 @@ def checkServiceID(input,service_id):
     return True
 
 def identifyServiceID(data):
+    data = data.replace(" ","")
+    data = data.replace("\n","")
     if(len(data)<1):
         return 1
     else:
@@ -188,7 +190,7 @@ def identifyServiceID(data):
         elif(cn and not t7 and t26):
             return 5
         else:
-            print bcolors.FAIL + bcolors.BOLD + "ERROR: "+bcolors.ENDC +"Not found service ID"
+            print bcolors.FAIL + bcolors.BOLD + "ERROR: "+bcolors.ENDC +"Not found "+data+" in service ID"
             log("error","Not found service ID")
             exit()
 
@@ -312,7 +314,8 @@ def AnalyzeSample(data,route_id,direction):
                     #Always add to last added stop
                     sample.stops[-1].arrival_time.append(StopTime(timeData,str(identifyServiceID(service_type_data[index]))))
                     #Add day off
-                    sample.stops[-1].arrival_time[-1].dateOff = defaultDateOff
+                    if identifyServiceID(service_type_data[index])!=1:
+                        sample.stops[-1].arrival_time[-1].dateOff = defaultDateOff
                 index+=1
     else:
         #For route 51 52 53
@@ -329,9 +332,14 @@ def AnalyzeSample(data,route_id,direction):
         #Get col number have route data
         rawRouteData = data.pop(0).split(delimiter)
         for i in range(firstTime,len(rawRouteData)):
-            if(rawRouteData[i]==route_id):
+            if(int(rawRouteData[i])==int(route_id)):
                 colData.append(i)
-        
+    
+        print 'Exist ' + str(len(colData))+" columns in SAMPLE"
+        print 'No: ',
+        for i in colData:
+            print i,
+        print ""
         #Search time in colData
         #Get service type in colData
         rawServiceTypeData = []
@@ -354,11 +362,65 @@ def AnalyzeSample(data,route_id,direction):
                 else :
                     rawServiceTypeData.append(str(line))
             i+=1
-        #Get service type
-        service_type_data= []
-        for i in colData:
-            service_type_data.append(rawServiceTypeData[i-firstTime])
-        print service_type_data
+        #Check again if fixing correct?
+        if len(rawServiceTypeData) != len(data[3].split(delimiter))-firstTime:
+            print bcolors.FAIL + bcolors.BOLD + "INCORRECT LENGTH OF rawServiceTypeData" + bcolors.ENDC
+            exit()
+
+        #Get Stop Name
+        #Not getting which do not have time
+        for row in range(1,len(data)):
+            rawData = data[row].split(delimiter)
+            fixedData = []
+            #Fix with quote
+            haveQuote = False
+            waitContent=''
+            i = 0
+            for line in rawData:
+                if i>=firstTime:
+                    if '"' in line and not haveQuote:
+                        waitContent += line
+                        haveQuote = True
+                    elif not '"' in line and haveQuote:
+                        waitContent += line
+                    elif '"' in line and haveQuote:
+                        waitContent+=line
+                        fixedData.append(str(waitContent))
+                        haveQuote = False
+                        waitContent=''
+                    else :
+                        fixedData.append(str(line))
+                i+=1
+            #Get stop Name
+            rawStopName = rawData[0]
+            rawTime = []
+            isCorrectStopName = False
+            #Get All time and service Type       
+            service_type_data= []
+            for di in colData:
+                i = di-firstTime
+                if len(fixedData[i].split())>0 and len(fixedData[i].split(':'))>1:
+                    rawTime.append(fixedData[i])
+                    service_type_data.append(rawServiceTypeData[i])
+
+                
+            #Check is stop correct?
+            if len(rawTime)>0:
+                isCorrectStopName = True
+            
+            if isCorrectStopName:
+                #Add Stop
+                sample.stops.append(Stop(rawStopName))
+                #Add time and service ID
+                for time in range(0,len(rawTime)):
+                    serviceid = identifyServiceID(service_type_data[time])
+                    sample.stops[-1].arrival_time.append(StopTime(rawTime[time],serviceid))
+                    #Add date off
+                    if serviceid != 1:
+                        sample.stops[-1].arrival_time[-1].dateOff = defaultDateOff
+
+
+
     return sample
 
 def CompareRouteID(data,sample):
@@ -437,9 +499,9 @@ def CompareStopOrder(data,sample):
                 print 'Missing '+bcolors.BOLD+ 'Stop '+ str(i+1) +': '+bcolors.ENDC + str(sample.stops[i].name) + ' in '+bcolors.WARNING+bcolors.BOLD +' DATA '+ bcolors.ENDC
             numDataStop -= 1
     elif numSampleStop>0:
-        for i in range(0,numDataStop):
+        for i in range(0,numSampleStop):
             if numDataStop>0:
-                if data.stops[i].name.replace(" ","")== sample.stops[i].name.replace(" ",""):
+                if data.stops[i].name.replace(" ","") == sample.stops[i].name.replace(" ",""):
                     correctCount += 1
                 else:
                     StopOrder = False
@@ -473,12 +535,14 @@ def CompareNumTime(data,sample):
 def CompareTimeOrder(data,sample):
     TimeOrder = True
     if (len(data.stops)!=len(sample.stops)):
-        NumTime = False
+        TimeOrder = False
         print 'Can not compare TimeOrder becase of NumStop Fail'
     else:
         for i in range(0,len(sample.stops)):
             #Get Stop
             #Get number of time on that stop
+            #slen : sample Stop Time length
+            #dlen: data Stop Time length
             slen = len(sample.stops[i].arrival_time)
             dlen = len(data.stops[i].arrival_time)
 
@@ -500,11 +564,33 @@ def CompareTimeOrder(data,sample):
                             print 'Wrong '+bcolors.BOLD+ 'TimeOrder: '+bcolors.ENDC + str(dataTime) + ' | Sample: '+ str(sampleTime)
                             TimeOrder = False
                     else:
-                        log('error','Missing Time:' + str(sample.stops[i].arrival_time[time].time) +' in DATA')
-                        print 'Missing '+bcolors.BOLD+ 'Time:'+bcolors.ENDC + str(sample.stops[i].arrival_time[time].time) + ' in DATA'
+                        log('error','Missing Time:' + str(sample.stops[i].arrival_time[time].time) +' at stop '+ data.stops[i].name+' in DATA')
+                        print 'Missing '+bcolors.BOLD+ 'Time:'+bcolors.ENDC + str(sample.stops[i].arrival_time[time].time) +' at stop '+bcolors.BOLD + data.stops[i].name+bcolors.ENDC + ' in DATA'
                         TimeOrder = False
                     currentdlen-=1
-            #Chua lam phan kiem tra phan du cua dlen
+            elif slen>0:
+                currentdlen = slen
+                for time in range(0,len(data.stops[i].arrival_time)):
+                    if currentdlen >0:
+                        #Comapre 08:00:00 vs 08:00
+                        #Convert time
+                        sampleTime = str(sample.stops[i].arrival_time[time].time).replace(" ","")[:5]
+                        dataTime = str(data.stops[i].arrival_time[time].time).replace(" ","")[:5]
+
+                        #Compare time
+                        #Compare Hour
+                        sameHour = int(sampleTime.split(":")[0]) == int(dataTime.split(":")[0])
+                        sameMin = int(sampleTime.split(":")[1]) == int(dataTime.split(":")[1])
+                        if  sameHour != sameMin :
+                            log('error','Wrong TimeOrder: ' + str(dataTime) + ' | Sample: '+ str(sampleTime))
+                            print 'Wrong '+bcolors.BOLD+ 'TimeOrder: '+bcolors.ENDC + str(dataTime) + ' | Sample: '+ str(sampleTime)
+                            TimeOrder = False
+                    else:
+                        log('error','Do not have :' + str(data.stops[i].arrival_time[time].time) + ' at stop '+data.stops[i].name +' in SAMPLE')
+                        print 'Do not have '+bcolors.BOLD+ 'Time:'+bcolors.ENDC + str(data.stops[i].arrival_time[time].time)+ ' at stop '+bcolors.BOLD + data.stops[i].name+bcolors.ENDC  + ' in SAMPLE'
+                        TimeOrder = False
+                    currentdlen-=1
+                
 
     return TimeOrder
 
@@ -540,8 +626,7 @@ def CompareServiceID(data,sample,NumTime):
                 #Get in Time
                 sampleService = sample.stops[stop].arrival_time[time].service_id
                 dataService = data.stops[stop].arrival_time[time].service_id
-                if sampleService != dataService:
-                    print 'ss'
+                if int(sampleService) != int(dataService):
                     ServiceID = False
                     log('error','Wrong ServiceID : '+' at stop '+ str(stop) + ' ' +sample.stops[stop].name + str(dataService) + ' | Sample: '+ str(sampleService))
                     serviceidmsg = bcolors.BOLD+ 'ServiceID :'+bcolors.ENDC+' at stop '+ str(stop) + ' '+bcolors.BOLD+sample.stops[stop].name + bcolors.ENDC+' time '+ bcolors.BOLD+str(sample.stops[stop].arrival_time[time].time)[:5]+bcolors.ENDC+' :'+str(dataService)+' | Sample: '+ str(sampleService)
@@ -721,7 +806,7 @@ else:
     sys.stdout.write("]\n")
 
     #Print content cdata
-    if printData:
+    if printContent:
         print "Data"
         for data in cdata:
             printData(data)
