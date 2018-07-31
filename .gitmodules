@@ -1,0 +1,3 @@
+[submodule "kazebus_server"]
+	path = kazebus_server
+	url = https://github.com/phatvo2015/kazebus
