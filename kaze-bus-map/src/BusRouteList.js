@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import lang from './lang.json';
-import route_color from './route_color.json';
 import "./Sidebar.css";
 
+
+
 class BusRouteList extends Component{
+
     constructor(props){
         super(props);
         this.state = {bus:null}
+        
+        
     }
-    route_color = route_color;
     lang = lang;
 
     handleChange= event=>{
@@ -16,6 +19,7 @@ class BusRouteList extends Component{
     }
 
     render(){ 
+
         let fadestyle=null;
         if(this.props.fade!==0){
             fadestyle={
@@ -27,14 +31,16 @@ class BusRouteList extends Component{
             }
         }
         const busRouteListArray = [];
-        for(var i in route_color){
+        if (this.props.route_list != null)
+        for(var i in this.props.route_list.routes){
+           
             busRouteListArray.push(
-                <div className="busRoute"  onClick={this.handleChange.bind(this)} data-id={i}>
-                     <div className="busNumber" style={{backgroundColor: route_color[i]}}>
-                         <h2>{i}</h2>
+                <div className="busRoute"  onClick={this.handleChange.bind(this)} data-id={this.props.route_list.routes[i].route_id}>
+                     <div className="busNumber" style={{backgroundColor: "#"+this.props.route_list.routes[i].color}}>
+                         <h2>{this.props.route_list.routes[i].route_id}</h2>
                      </div>
                      <div className="busInfo">
-                     <p>{lang[i+"-busInfo"][this.props.langCode]}</p>
+                     <p>{lang[this.props.route_list.routes[i].route_id+"-busInfo"][this.props.langCode]}</p>
                      </div>    
                  </div>
             );

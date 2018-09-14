@@ -26,10 +26,20 @@ class NavigationContent extends Component{
     }
  
     render(){
-        if(this.props.route!=null){
-            const style = {
-                color: route_color[this.props.route]
+        if(this.props.route!=null && this.props.data!=null){
+
+            //Search color
+            var style
+            for (var i in this.props.data.routes){
+                //console.log(this.props.data.routes[i].route_id + " and " + this.props.route)
+                if (this.props.data.routes[i].route_id == this.props.route){
+                    style = {
+                        color: "#"+this.props.data.routes[i].color
+                    }
+                    
+                }
             }
+            
             return (<div className="sidebarNavigation">
                         <div className="backButton" style={style} onClick={this.backButton}>
                             <i className="fa fa-caret-left"></i>
@@ -50,7 +60,17 @@ class Sidebar extends Component {
         super(props);
         this.collapseSidebar = this.collapseSidebar.bind(this);
         this.uncollapseSidebar= this.uncollapseSidebar.bind(this);
-        this.state = {display:true,navigation:null,state:1,fade:0};
+        this.state = {display:true,navigation:null,state:1,fade:0,route_list:null};
+    }
+
+    componentDidMount(){
+        console.log("Fetch data...")
+        fetch('./routes.json')
+        .then((res) => {
+            return res.json()
+        }).then((data)=>{
+            this.setState({route_list: data})
+        })
     }
 
     lang = lang;
@@ -141,8 +161,8 @@ class Sidebar extends Component {
                         {lang.buses[langCode]}
                     </h1>
                 </div>
-                <NavigationContent route={this.state.navigation} langCode={langCode} backButton={this.handleBackButton} fade={this.state.fade}/>
-                <BusRouteList route={this.state.navigation} langCode={langCode} height={height} routeClick={this.handleChangeRoute} fade={this.state.fade}/>
+                <NavigationContent route={this.state.navigation} data={this.state.route_list} langCode={langCode} backButton={this.handleBackButton} fade={this.state.fade}/>
+                <BusRouteList route={this.state.navigation} route_list={this.state.route_list} langCode={langCode} height={height} routeClick={this.handleChangeRoute} fade={this.state.fade}/>
                 <BusSchedule route={this.state.navigation} langCode={langCode} height={height} stationClick={this.handleChangeStation} state={this.state.state} fade={this.state.fade}/>
             </div>
         </div>
