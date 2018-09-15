@@ -1,0 +1,644 @@
+{
+	"stops": [
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 109,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 7",
+			"location": {
+				"lat": 11.092152,
+				"lon": 106.680481
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 108,
+			"stop_name": "VSIP2 Thống Nhất - Đường số 6",
+			"location": {
+				"lat": 11.089417,
+				"lon": 106.681115
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 105,
+			"stop_name": "VSIP2 Dân Chủ - Thống Nhất",
+			"location": {
+				"lat": 11.086236,
+				"lon": 106.681334
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 104,
+			"stop_name": "VSIP2 Dân Chủ - Vành Đai 1",
+			"location": {
+				"lat": 11.084877,
+				"lon": 106.67547
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 101,
+			"stop_name": "Nhà ở an sinh xã hội Hòa Lợi",
+			"location": {
+				"lat": 11.083944,
+				"lon": 106.673067
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 99,
+			"stop_name": "Chợ Hòa Lợi",
+			"location": {
+				"lat": 11.07713,
+				"lon": 106.67462
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 98,
+			"stop_name": "MIDORI PARK",
+			"location": {
+				"lat": 11.068857,
+				"lon": 106.677098
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		},
+		{
+			"stop_id": 1,
+			"stop_name": "hikari",
+			"location": {
+				"lat": 11.058186,
+				"lon": 106.683732
+			}
+		}
+	]
+}

@@ -1,0 +1,196 @@
+{
+	"stops": [
+		{
+			"stop_id": 10,
+			"stop_name": "Tòa nhà Becamex",
+			"location": {
+				"lat": 10.975809,
+				"lon": 106.670496
+			}
+		},
+		{
+			"stop_id": 12,
+			"stop_name": "Sân vận động Gò Đậu - Bình Dương",
+			"location": {
+				"lat": 10.97031,
+				"lon": 106.670474
+			}
+		},
+		{
+			"stop_id": 13,
+			"stop_name": "Bến xe khách tỉnh Bình Dương",
+			"location": {
+				"lat": 10.966375,
+				"lon": 106.66886
+			}
+		},
+		{
+			"stop_id": 15,
+			"stop_name": "Ngã ba Lò Chén",
+			"location": {
+				"lat": 10.968825,
+				"lon": 106.660441
+			}
+		},
+		{
+			"stop_id": 18,
+			"stop_name": "Nhà sách Bình Minh",
+			"location": {
+				"lat": 10.976366,
+				"lon": 106.657724
+			}
+		},
+		{
+			"stop_id": 20,
+			"stop_name": "Công viên Phú Cường",
+			"location": {
+				"lat": 10.978486,
+				"lon": 106.656195
+			}
+		},
+		{
+			"stop_id": 22,
+			"stop_name": "Chùa Bà Thiên Hậu",
+			"location": {
+				"lat": 10.980299,
+				"lon": 106.654275
+			}
+		},
+		{
+			"stop_id": 24,
+			"stop_name": "Bệnh viện Phụ Sản Nhi Bình Dương",
+			"location": {
+				"lat": 10.982282,
+				"lon": 106.653175
+			}
+		},
+		{
+			"stop_id": 26,
+			"stop_name": "Chợ Cây Dừa",
+			"location": {
+				"lat": 10.990714,
+				"lon": 106.651067
+			}
+		},
+		{
+			"stop_id": 27,
+			"stop_name": "Công an phường Hiệp Thành",
+			"location": {
+				"lat": 10.99246,
+				"lon": 106.654159
+			}
+		},
+		{
+			"stop_id": 29,
+			"stop_name": "Thư viện Tỉnh Bình Dương",
+			"location": {
+				"lat": 10.993665,
+				"lon": 106.656086
+			}
+		},
+		{
+			"stop_id": 32,
+			"stop_name": "Bệnh viện Đa khoa Tỉnh Bình Dương",
+			"location": {
+				"lat": 10.996347,
+				"lon": 106.656695
+			}
+		},
+		{
+			"stop_id": 34,
+			"stop_name": "Ngã tư PNT - Nguyễn Đức Thuận",
+			"location": {
+				"lat": 11.002186,
+				"lon": 106.663805
+			}
+		},
+		{
+			"stop_id": 36,
+			"stop_name": "Trường trung tiểu học Petrus Ký",
+			"location": {
+				"lat": 11.005322,
+				"lon": 106.666871
+			}
+		},
+		{
+			"stop_id": 38,
+			"stop_name": "Ngã tư PNT - Mỹ Phước Tân Vạn",
+			"location": {
+				"lat": 11.008503,
+				"lon": 106.669165
+			}
+		},
+		{
+			"stop_id": 40,
+			"stop_name": "Trung tâm văn hoá thể thao Tp.Thủ Dầu Một",
+			"location": {
+				"lat": 11.013783,
+				"lon": 106.675549
+			}
+		},
+		{
+			"stop_id": 42,
+			"stop_name": "Ngã tư Phạm Ngọc Thạch - Trần Ngọc Lên",
+			"location": {
+				"lat": 11.024768,
+				"lon": 106.67798
+			}
+		},
+		{
+			"stop_id": 44,
+			"stop_name": "Phạm Ngọc Thạch Số 1",
+			"location": {
+				"lat": 11.035116,
+				"lon": 106.678784
+			}
+		},
+		{
+			"stop_id": 46,
+			"stop_name": "Ngã tư Đại lộ Hùng Vương - Võ Văn Kiệt",
+			"location": {
+				"lat": 11.042275,
+				"lon": 106.676327
+			}
+		},
+		{
+			"stop_id": 6,
+			"stop_name": "SORA gardens",
+			"location": {
+				"lat": 11.047045,
+				"lon": 106.678813
+			}
+		},
+		{
+			"stop_id": 47,
+			"stop_name": "Lucky Square",
+			"location": {
+				"lat": 11.05219,
+				"lon": 106.682473
+			}
+		},
+		{
+			"stop_id": 50,
+			"stop_name": "Phố Thương mại - Lê Lợi",
+			"location": {
+				"lat": 11.05188,
+				"lon": 106.684486
+			}
+		},
+		{
+			"stop_id": 52,
+			"stop_name": "Phố Thương mại - Đồng Khởi",
+			"location": {
+				"lat": 11.053116,
+				"lon": 106.686513
+			}
+		},
+		{
+			"stop_id": 2,
+			"stop_name": "Trường Ngô Thời Nhiệm",
+			"location": {
+				"lat": 11.053288,
+				"lon": 106.690113
+			}
+		}
+	]
+}

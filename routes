@@ -1,0 +1,36 @@
+{
+	"routes": [
+		{
+			"route_id": 39,
+			"color": "ff0000"
+		},
+		{
+			"route_id": 51,
+			"color": "0000ff"
+		},
+		{
+			"route_id": 52,
+			"color": "0000ff"
+		},
+		{
+			"route_id": 53,
+			"color": "0000ff"
+		},
+		{
+			"route_id": 55,
+			"color": "654321"
+		},
+		{
+			"route_id": 66,
+			"color": "ffff00"
+		},
+		{
+			"route_id": 67,
+			"color": "00ff00"
+		},
+		{
+			"route_id": 68,
+			"color": "ff69b4"
+		}
+	]
+}
