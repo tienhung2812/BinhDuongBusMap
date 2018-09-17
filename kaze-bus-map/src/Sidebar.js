@@ -5,6 +5,11 @@ import "./Sidebar.css";
 import BusRouteList from './BusRouteList';
 import BusSchedule from './BusSchedule';
 
+//Use this path after fix allow CORS on heroku server
+//var path = 'https://kazebusmap.herokuapp.com';
+
+//Now we use this path for local request
+var path = 'https://kazebusmap.herokuapp.com'
 function langToLangCode(langRaw){
     switch(langRaw){
         case "vi":
@@ -64,8 +69,8 @@ class Sidebar extends Component {
     }
 
     componentDidMount(){
-        console.log("Fetch data...")
-        fetch('./routes.json')
+        console.log("Fetch route list...")
+        fetch(path+'/routes')
         .then((res) => {
             return res.json()
         }).then((data)=>{
@@ -163,7 +168,7 @@ class Sidebar extends Component {
                 </div>
                 <NavigationContent route={this.state.navigation} data={this.state.route_list} langCode={langCode} backButton={this.handleBackButton} fade={this.state.fade}/>
                 <BusRouteList route={this.state.navigation} route_list={this.state.route_list} langCode={langCode} height={height} routeClick={this.handleChangeRoute} fade={this.state.fade}/>
-                <BusSchedule route={this.state.navigation} langCode={langCode} height={height} stationClick={this.handleChangeStation} state={this.state.state} fade={this.state.fade}/>
+                <BusSchedule route={this.state.navigation} langCode={langCode} height={height} stationClick={this.handleChangeStation} backButton={this.handleBackButton}  state={this.state.state} fade={this.state.fade}/>
             </div>
         </div>
         );
